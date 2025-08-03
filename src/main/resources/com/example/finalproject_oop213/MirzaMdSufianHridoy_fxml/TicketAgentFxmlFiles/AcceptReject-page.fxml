@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="539.0" prefWidth="767.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.MirzaMdSufianHridoy_fxml.TicketAgentFxmlFiles.AcceptRejectPage">
+   <children>
+      <TableView layoutX="7.0" layoutY="96.0" prefHeight="230.0" prefWidth="753.0">
+        <columns>
+          <TableColumn prefWidth="59.0" text=" id" />
+            <TableColumn prefWidth="175.0" text="Passenger Name" />
+          <TableColumn prefWidth="92.0" text=" Trip number" />
+            <TableColumn prefWidth="141.0" text="Proveded trx id" />
+            <TableColumn prefWidth="141.0" text="Bkash number" />
+            <TableColumn prefWidth="141.0" text="is paid?" />
+        </columns>
+      </TableView>
+      <Label layoutX="47.0" layoutY="360.0" text="passenger id" />
+      <TextField layoutX="127.0" layoutY="356.0" prefHeight="25.0" prefWidth="97.0" />
+      <RadioButton layoutX="247.0" layoutY="360.0" mnemonicParsing="false" text="Accept" />
+      <RadioButton layoutX="326.0" layoutY="360.0" mnemonicParsing="false" text="Reject" />
+      <Button layoutX="118.0" layoutY="431.0" mnemonicParsing="false" text="Back to dashboard" />
+      <Label layoutX="496.0" layoutY="360.0" text="passenger id to send message" />
+      <TextField layoutX="675.0" layoutY="356.0" prefHeight="25.0" prefWidth="68.0" />
+      <TextField layoutX="496.0" layoutY="394.0" prefHeight="99.0" prefWidth="253.0" />
+      <Button layoutX="127.0" layoutY="393.0" mnemonicParsing="false" text="confirm" />
+      <Button layoutX="539.0" layoutY="500.0" mnemonicParsing="false" text="Send" />
+   </children>
+</AnchorPane>

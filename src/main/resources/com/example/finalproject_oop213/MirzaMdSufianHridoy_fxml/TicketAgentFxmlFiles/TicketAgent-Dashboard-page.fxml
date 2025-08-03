@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="595.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.MirzaMdSufianHridoy.TicketAgentDashboardController">
+   <children>
+      <Label layoutX="251.0" layoutY="32.0" text="Ticket Agent Dashboard">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="69.0" layoutY="102.0" mnemonicParsing="false" text="Accept and Reject ticket" />
+      <Button layoutX="70.0" layoutY="151.0" mnemonicParsing="false" text="Create A Passenger Ticket" />
+      <Button layoutX="69.0" layoutY="243.0" mnemonicParsing="false" text="Edit  Passenger Ticket" />
+      <Button layoutX="69.0" layoutY="285.0" mnemonicParsing="false" text="Manage Cancel Request Ticket" />
+      <Button layoutX="74.0" layoutY="331.0" mnemonicParsing="false" text="Add notice For All Passenger" />
+      <Button layoutX="73.0" layoutY="378.0" mnemonicParsing="false" text="See Booking Summery with Statistics" />
+      <Button layoutX="70.0" layoutY="201.0" mnemonicParsing="false" text="View All Passenger and their ticket status" />
+       <Button layoutX="72.0" layoutY="421.0" mnemonicParsing="false" text="Change or Add Launch Trip Schedule" />
+       <Button layoutX="278.0" layoutY="514.0" mnemonicParsing="false" text="Log out" />
+   </children>
+</AnchorPane>

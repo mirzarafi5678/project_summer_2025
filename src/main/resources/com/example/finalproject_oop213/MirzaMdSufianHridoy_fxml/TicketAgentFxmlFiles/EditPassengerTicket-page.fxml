@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="638.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.MirzaMdSufianHridoy_fxml.TicketAgentFxmlFiles.EditPassengerTicketPage">
+   <children>
+      <TreeTableView layoutX="8.0" layoutY="275.0" prefHeight="318.0" prefWidth="699.0">
+        <columns>
+          <TreeTableColumn prefWidth="113.0" text="Passenger name" />
+          <TreeTableColumn prefWidth="68.0" text=" ID" />
+            <TreeTableColumn prefWidth="84.0" text="Trip Number" />
+            <TreeTableColumn prefWidth="108.0" text="Number of seats" />
+            <TreeTableColumn prefWidth="74.0" text="Cargo Space" />
+            <TreeTableColumn prefWidth="102.0" text="Type of seat" />
+            <TreeTableColumn prefWidth="130.0" text="Phone Number" />
+        </columns>
+      </TreeTableView>
+      <TextField layoutX="130.0" layoutY="48.0" />
+      <Label layoutX="26.0" layoutY="52.0" text="Passenger Name" />
+      <Button layoutX="60.0" layoutY="219.0" mnemonicParsing="false" text="Change" />
+      <Label layoutX="8.0" layoutY="18.0" text="Passenger Id number you want to change" />
+      <TextField layoutX="246.0" layoutY="14.0" />
+      <Label layoutX="26.0" layoutY="134.0" text="Trip Number" />
+      <TextField layoutX="103.0" layoutY="130.0" />
+      <Label layoutX="26.0" layoutY="174.0" text="Number of Seat" />
+      <TextField layoutX="118.0" layoutY="170.0" prefHeight="25.0" prefWidth="45.0" />
+      <Label layoutX="328.0" layoutY="52.0" text="Cargo Space" />
+      <TextField layoutX="410.0" layoutY="48.0" prefHeight="25.0" prefWidth="59.0" />
+      <Label layoutX="26.0" layoutY="94.0" text="Phone Number'" />
+      <TextField layoutX="115.0" layoutY="90.0" />
+      <Button layoutX="290.0" layoutY="207.0" mnemonicParsing="false" text="Update the table" />
+      <Label layoutX="29.0" layoutY="258.0" text="Accepted ticket passegers table" />
+      <Button layoutX="42.0" layoutY="599.0" mnemonicParsing="false" text="Back to dashboard" />
+   </children>
+</AnchorPane>
