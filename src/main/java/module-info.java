@@ -1,4 +1,4 @@
-module com.example.finalproject_oop213 {
+module com.example.finalproject_oop {
     requires javafx.controls;
     requires javafx.fxml;
 
