@@ -18,7 +18,7 @@ public class SignUpPageController {
     @javafx.fxml.FXML
     private TextField SetPasswordTF;
     Alert aa= new Alert(Alert.AlertType.ERROR);
-    ArrayList<alluserdata> arr1 = new ArrayList<>();
+//    ArrayList<alluserdata> arr1 = new ArrayList<>();
     @javafx.fxml.FXML
     void initialize(){
         SelectUserComboBox.getItems().addAll("Passenger","Ticket Agent","Financial Officer","Call Center Agent",
@@ -42,7 +42,7 @@ public class SignUpPageController {
               aa.show();
               return;
           }
-          for ( alluserdata all : arr1 ){
+          for ( alluserdata all : addInList.aa ){
               if (all.getSetid()==Integer.parseInt(setidTF.getText())){
                   aa.setContentText("this id already used. put different id ");
                   aa.show();
@@ -57,7 +57,7 @@ public class SignUpPageController {
                   SelectUserComboBox.getValue(),
                   setUsernameTF.getText() );
 
-          arr1.add(datas);
+          addInList.addin(datas);
 
           StatusShowLabel.setText("succesfully sign up .Now go log in page to your dashboard");
 
