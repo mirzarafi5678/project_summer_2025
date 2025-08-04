@@ -1,5 +1,7 @@
 package com.example.finalproject_oop213.MirzaMdSufianHridoy;
 
+import java.util.ArrayList;
+
 public class alluserdata {
     private String setUsername;
     private String setpassword;
@@ -13,6 +15,8 @@ public class alluserdata {
         this.setusertype = setusertype;
         this.setUsername = setUsername;
     }
+
+
 
     public String getSetUsername() {
         return setUsername;
