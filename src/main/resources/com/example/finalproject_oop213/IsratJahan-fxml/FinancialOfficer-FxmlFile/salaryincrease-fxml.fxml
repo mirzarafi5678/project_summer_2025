@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.finalproject_oop213.IsratJahan-fxml.FinancialOfficer-FxmlFile.SalaryincreaseFxml"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.IsratJahan-fxml.FinancialOfficer-FxmlFile.SalaryincreaseFxml">
+   <children>
+      <TableView layoutX="16.0" layoutY="194.0" prefHeight="200.0" prefWidth="568.0">
+        <columns>
+          <TableColumn prefWidth="107.0" text="Employee ID" />
+          <TableColumn prefWidth="136.0" text="EmployeeName" />
+            <TableColumn prefWidth="157.0" text="Ampount" />
+            <TableColumn prefWidth="157.0" text="Date Of Implement" />
+        </columns>
+      </TableView>
+      <Button layoutX="417.0" layoutY="155.0" mnemonicParsing="false" text="Back dashboard" />
+      <TextField layoutX="53.0" layoutY="32.0" text="Employee ID" />
+      <TextField layoutX="53.0" layoutY="66.0" text="Employee Name" />
+      <TextField layoutX="53.0" layoutY="103.0" text="Amount" />
+      <DatePicker layoutX="53.0" layoutY="142.0" prefHeight="26.0" prefWidth="160.0" />
+      <Button layoutX="417.0" layoutY="103.0" mnemonicParsing="false" text="Add Salary" />
+   </children>
 </AnchorPane>
