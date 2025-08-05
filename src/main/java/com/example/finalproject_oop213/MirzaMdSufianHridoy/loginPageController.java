@@ -35,7 +35,7 @@ public class loginPageController {
 
         for ( alluserdata aa :  addInList.aa  ) {
             if ( aa.getSetUsername().equals(usernameTF.getText()) && aa.getSetpassword().equals(passwordTF.getText())
-                     && aa.getSetusertype().equals(UserTypeComboBox.getValue())  ){
+                     && aa.getSetusertype().equals(UserTypeComboBox.getValue()) )  {
 
                 user= aa.getSetusertype();
                 break;
@@ -48,6 +48,27 @@ public class loginPageController {
         if (Objects.equals(user, "Ticket Agent")){
             SceneSwitcher.switchTo("/com/example/finalproject_oop213/MirzaMdSufianHridoy_fxml/TicketAgentFxmlFiles/TicketAgent-Dashboard-page.fxml",actionEvent);
         }
+        if (Objects.equals(user, "Call Center Agent")){
+          //
+        }
+        if (Objects.equals(user, "Financial Officer")){
+            //
+        }
+        if (Objects.equals(user, "Operation Manager")){
+            //
+        }
+        if (Objects.equals(user, "Guest User")){
+            //
+        }
+        if (Objects.equals(user, "Safety Inspector")){
+            //
+        }
+        if (Objects.equals(user, "Port Authority")){
+            //
+        }
+
+
+
 
     }
 }

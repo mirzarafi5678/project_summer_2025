@@ -7,6 +7,8 @@ public class PassengerDashboardController {
 
     @javafx.fxml.FXML
     public void SeeHistoryAndTicketStatusButton(ActionEvent actionEvent) {
+
+
     }
 
     @javafx.fxml.FXML
@@ -39,5 +41,8 @@ public class PassengerDashboardController {
 
     @javafx.fxml.FXML
     public void BuyLaunchTripTicketButton(ActionEvent actionEvent) {
+
+
+
     }
 }

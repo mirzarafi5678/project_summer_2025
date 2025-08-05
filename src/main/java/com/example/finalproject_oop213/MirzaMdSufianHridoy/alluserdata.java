@@ -49,4 +49,14 @@ public class alluserdata {
     public void setSetpassword(String setpassword) {
         this.setpassword = setpassword;
     }
+
+    @Override
+    public String toString() {
+        return "alluserdata{" +
+                "setUsername='" + setUsername + '\'' +
+                ", setpassword='" + setpassword + '\'' +
+                ", setusertype='" + setusertype + '\'' +
+                ", setid=" + setid +
+                '}';
+    }
 }

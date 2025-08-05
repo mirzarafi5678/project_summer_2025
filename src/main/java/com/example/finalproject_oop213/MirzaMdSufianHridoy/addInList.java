@@ -5,9 +5,14 @@ import java.util.ArrayList;
 public class addInList {
 
     public static ArrayList<alluserdata> aa = new ArrayList<>();
+    public static ArrayList<PassengerData> bb= new ArrayList<>();
 
-    public static  void addin( alluserdata data  ) {
+    public static  void addAllUserData( alluserdata data  ) {
         aa.add(data);
     }
+
+    public  static void addPassengerData(  PassengerData data   ){bb.add(data);}
+
+
 
 }

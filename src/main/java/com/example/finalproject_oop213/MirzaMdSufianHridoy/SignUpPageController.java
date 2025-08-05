@@ -49,6 +49,15 @@ public class SignUpPageController {
                   return;
               }
           }
+        for ( alluserdata all : addInList.aa ){
+            if (all.getSetUsername().equals(setUsernameTF.getText())){
+                aa.setContentText("this username already used. put different username ");
+                aa.show();
+                return;
+            }
+        }
+
+
 
           alluserdata datas =new alluserdata(
                   SetPasswordTF.getText(),
@@ -56,7 +65,7 @@ public class SignUpPageController {
                   SelectUserComboBox.getValue(),
                   setUsernameTF.getText() );
 
-          addInList.addin(datas);
+          addInList.addAllUserData(datas);
 
           StatusShowLabel.setText("succesfully sign up .Now go log in page to your dashboard");
 
