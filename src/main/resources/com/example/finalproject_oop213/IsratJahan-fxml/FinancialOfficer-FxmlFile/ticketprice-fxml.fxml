@@ -24,8 +24,11 @@
       <Text layoutX="58.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="amount" />
       <TableView layoutX="4.0" layoutY="289.0" prefHeight="200.0" prefWidth="627.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn prefWidth="93.0" text="ID" />
+          <TableColumn prefWidth="105.0" text="From" />
+            <TableColumn prefWidth="137.0" text="To" />
+            <TableColumn prefWidth="121.0" text="Category" />
+            <TableColumn prefWidth="170.0" text="Amount" />
         </columns>
       </TableView>
       <Button layoutX="325.0" layoutY="237.0" mnemonicParsing="false" text="add" />
