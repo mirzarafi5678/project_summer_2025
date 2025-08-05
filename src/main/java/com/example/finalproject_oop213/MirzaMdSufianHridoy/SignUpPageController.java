@@ -50,7 +50,6 @@ public class SignUpPageController {
               }
           }
 
-
           alluserdata datas =new alluserdata(
                   SetPasswordTF.getText(),
                   Integer.parseInt(setidTF.getText()),
