@@ -41,12 +41,13 @@ public class loginPageController {
                 break;
             }
         }
+        System.out.println(user);
         if (Objects.equals(user, "Passenger")) {
-            SceneSwitcher.switchTo("/com/example/finalproject_oop213/MirzaMdSufianHridoy_fxml/PassengerFxmlFiles/Passenger-Dashboard-page.fxml",actionEvent);
-
+            SceneSwitcher.switchTo("/com/example/finalproject_oop213/MirzaMdSufianHridoy_fxml/Passenger-Dashboard-page.fxml",actionEvent);
+            System.out.println("moved");
         }
         if (Objects.equals(user, "Ticket Agent")){
-            SceneSwitcher.switchTo("/com/example/finalproject_oop213/MirzaMdSufianHridoy_fxml/TicketAgentFxmlFiles/TicketAgent-Dashboard-page.fxml",actionEvent);
+            SceneSwitcher.switchTo("/com/example/finalproject_oop213/MirzaMdSufianHridoy_fxml/TicketAgent-Dashboard-page.fxml",actionEvent);
         }
         if (Objects.equals(user, "Call Center Agent")){
           //

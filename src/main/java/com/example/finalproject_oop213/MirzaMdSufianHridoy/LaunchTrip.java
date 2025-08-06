@@ -1,24 +1,45 @@
 package com.example.finalproject_oop213.MirzaMdSufianHridoy;
 
-public class LaunchTrip {
+import java.io.Serializable;
 
-    public String TrioNumber, From, To, StartTime;
-    public int estimatedHour;
+public class LaunchTrip implements Serializable {
 
-    public LaunchTrip(String from, String trioNumber, String to, String startTime, int estimatedHour) {
-        From = from;
-        TrioNumber = trioNumber;
-        To = to;
-        StartTime = startTime;
+    public String TripNumber, From, To, StartTime;
+    public int estimatedHour,price;
+    public String date;
+
+    public LaunchTrip(String from,String tripNumber,String to,String startTime, int estimatedHour, int price, String date   ) {
+        this.TripNumber = tripNumber;
+        this.date = date;
+        this.price = price;
         this.estimatedHour = estimatedHour;
+        this.StartTime = startTime;
+        this.To = to;
+        this.From = from;
     }
 
-    public String getTrioNumber() {
-        return TrioNumber;
+    public String getTripNumber() {
+        return TripNumber;
     }
 
-    public void setTrioNumber(String trioNumber) {
-        TrioNumber = trioNumber;
+    public void setTripNumber(String tripNumber) {
+        TripNumber = tripNumber;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     public int getEstimatedHour() {
@@ -29,14 +50,6 @@ public class LaunchTrip {
         this.estimatedHour = estimatedHour;
     }
 
-    public String getTo() {
-        return To;
-    }
-
-    public void setTo(String to) {
-        To = to;
-    }
-
     public String getStartTime() {
         return StartTime;
     }
@@ -45,22 +58,19 @@ public class LaunchTrip {
         StartTime = startTime;
     }
 
+    public String getTo() {
+        return To;
+    }
+
+    public void setTo(String to) {
+        To = to;
+    }
+
     public String getFrom() {
         return From;
     }
 
     public void setFrom(String from) {
         From = from;
-    }
-
-    @Override
-    public String toString() {
-        return "LaunchTrip{" +
-                "TrioNumber='" + TrioNumber + '\'' +
-                ", From='" + From + '\'' +
-                ", To='" + To + '\'' +
-                ", StartTime='" + StartTime + '\'' +
-                ", estimatedHour=" + estimatedHour +
-                '}';
     }
 }

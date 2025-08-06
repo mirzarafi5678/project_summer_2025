@@ -52,11 +52,11 @@ public class alluserdata {
 
     @Override
     public String toString() {
-        return "alluserdata{" +
-                "setUsername='" + setUsername + '\'' +
-                ", setpassword='" + setpassword + '\'' +
-                ", setusertype='" + setusertype + '\'' +
-                ", setid=" + setid +
-                '}';
-    }
+        return "setUsername='" + setUsername + "," +
+                ", setpassword='" + setpassword + "," +
+                ", setusertype='" + setusertype + "," +
+                ", setid=" + setid + "\n"; }
+
+
 }
+

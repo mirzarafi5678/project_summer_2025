@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="607.0" prefWidth="846.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.MirzaMdSufianHridoy.MakePaymentPageController">
+<AnchorPane prefHeight="607.0" prefWidth="846.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.MirzaMdSufianHridoy.PassengerController.MakePaymentPageController">
    <children>
       <Label layoutX="14.0" layoutY="78.0" prefHeight="238.0" prefWidth="362.0" style="-fx-border-color: black;" />
       <Label layoutX="25.0" layoutY="55.0" text="Your booked ticket details" />

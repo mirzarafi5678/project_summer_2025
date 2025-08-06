@@ -1,5 +1,6 @@
 package com.example.finalproject_oop213.MirzaMdSufianHridoy;
 
+import com.example.finalproject_oop213.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -14,21 +15,31 @@ public class SceneSwitcher {
     public static Stage stage;
 
     public static void switchTo(String fxml, ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(
-                SceneSwitcher.class.getResource(fxml)
-        );
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(scene);
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxml));
+            Scene nextScene = new Scene(fxmlLoader.load());
+            Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            //nextStage.setTitle("Student View");
+            nextStage.setScene(nextScene);
+            nextStage.show();
+        }
+        catch(Exception e){
+            //
+        }
     }
 
     public static void switchTo(String fxml) throws IOException {
-        Parent root = FXMLLoader.load(
-                SceneSwitcher.class.getResource(fxml)
-        );
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-    }
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxml));
+            Scene nextScene = new Scene(fxmlLoader.load());
+            Stage nextStage = new Stage();
+            nextStage.setTitle("Student View");
+            nextStage.setScene(nextScene);
+            nextStage.show();
+        } catch (Exception e) {
+            //
+        }
 
+    }
 
 }
