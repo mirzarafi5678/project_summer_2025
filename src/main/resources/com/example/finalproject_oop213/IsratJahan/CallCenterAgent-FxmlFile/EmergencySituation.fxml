@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.IsratJahan.CallCenterAgent-FxmlFile.EmergencySituation">
+   <children>
+      <ComboBox layoutX="41.0" layoutY="126.0" prefWidth="150.0" promptText="type" />
+      <TextField layoutX="36.0" layoutY="26.0" promptText="Compainer ID" />
+      <TextField layoutX="36.0" layoutY="58.0" promptText="Compainer Name" />
+      <Button layoutX="483.0" layoutY="40.0" mnemonicParsing="false" text="Back" />
+      <Button layoutX="483.0" layoutY="71.0" mnemonicParsing="false" text="Save" />
+      <Button layoutX="483.0" layoutY="100.0" mnemonicParsing="false" text="Update" />
+      <DatePicker layoutX="39.0" layoutY="94.0" prefHeight="26.0" prefWidth="160.0" promptText="call Date" />
+      <TableView layoutX="16.0" layoutY="180.0" prefHeight="200.0" prefWidth="567.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="ID" />
+          <TableColumn prefWidth="75.0" text="Name" />
+            <TableColumn prefWidth="75.0" text="Date" />
+            <TableColumn prefWidth="75.0" text="Details" />
+            <TableColumn prefWidth="75.0" text="Type" />
+        </columns>
+      </TableView>
+      <TextField layoutX="220.0" layoutY="26.0" prefHeight="82.0" prefWidth="160.0" promptText="Details" />
+   </children>
+</AnchorPane>
