@@ -66,6 +66,7 @@ public class SignUpPageController {
                   setUsernameTF.getText() );
 
           addInList.addAllUserData(datas);
+        System.out.println("added");
 
           StatusShowLabel.setText("succesfully sign up .Now go log in page to your dashboard");
 

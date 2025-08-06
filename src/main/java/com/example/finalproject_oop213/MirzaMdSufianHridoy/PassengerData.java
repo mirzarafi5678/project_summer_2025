@@ -1,21 +1,33 @@
 package com.example.finalproject_oop213.MirzaMdSufianHridoy;
 
-public class PassengerData {
-        public String fullname;
+public class PassengerData  {
+
+    public String fullname;
         public  String bkashNumber;
         public String phoneNo;
         public String gender, typeOfSeat;
         public int needBaseCargoSpace, NumberOfTicket;
+        public LaunchTrip obj;
 
 
-    public PassengerData(String fullname, int numberOfTicket, int needBaseCargoSpace, String typeOfSeat, String gender, String phoneNo, String bkashNumber) {
+    public PassengerData(String fullname, LaunchTrip obj, int numberOfTicket, int needBaseCargoSpace,
+                         String typeOfSeat, String gender, String phoneNo, String bkashNumber) {
         this.fullname = fullname;
+        this.obj = obj;
         NumberOfTicket = numberOfTicket;
         this.needBaseCargoSpace = needBaseCargoSpace;
         this.typeOfSeat = typeOfSeat;
         this.gender = gender;
         this.phoneNo = phoneNo;
         this.bkashNumber = bkashNumber;
+    }
+
+    public LaunchTrip getObj() {
+        return obj;
+    }
+
+    public void setObj(LaunchTrip obj) {
+        this.obj = obj;
     }
 
     public String getFullname() {

@@ -1,9 +1,16 @@
-package com.example.finalproject_oop213.MirzaMdSufianHridoy;
+package com.example.finalproject_oop213.MirzaMdSufianHridoy.PassengerController;
 
+import com.example.finalproject_oop213.MirzaMdSufianHridoy.SceneSwitcher;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
+
+import java.io.IOException;
 
 public class PassengerDashboardController {
 
+
+    @javafx.fxml.FXML
+    private Label seeYourIdPass;
 
     @javafx.fxml.FXML
     public void SeeHistoryAndTicketStatusButton(ActionEvent actionEvent) {
@@ -40,9 +47,11 @@ public class PassengerDashboardController {
     }
 
     @javafx.fxml.FXML
-    public void BuyLaunchTripTicketButton(ActionEvent actionEvent) {
+    public void BuyLaunchTripTicketButton(ActionEvent actionEvent) throws IOException {
 
+        SceneSwitcher.switchTo("/com/example/finalproject_oop213/MirzaMdSufianHridoy_fxml/BuyLaunchTrip-Page.fxml",actionEvent);
 
+    seeYourIdPass.setText("");
 
     }
 }
