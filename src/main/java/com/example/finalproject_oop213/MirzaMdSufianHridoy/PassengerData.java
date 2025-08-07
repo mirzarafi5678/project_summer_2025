@@ -8,10 +8,13 @@ public class PassengerData  {
         public String gender, typeOfSeat;
         public int needBaseCargoSpace, NumberOfTicket;
         public LaunchTrip obj;
+        public alluserdata userobj;
 
 
     public PassengerData(String fullname, LaunchTrip obj, int numberOfTicket, int needBaseCargoSpace,
-                         String typeOfSeat, String gender, String phoneNo, String bkashNumber) {
+                         String typeOfSeat, String gender, String phoneNo, String bkashNumber ,alluserdata userobj) {
+
+        this.userobj=userobj;
         this.fullname = fullname;
         this.obj = obj;
         NumberOfTicket = numberOfTicket;
@@ -20,6 +23,14 @@ public class PassengerData  {
         this.gender = gender;
         this.phoneNo = phoneNo;
         this.bkashNumber = bkashNumber;
+    }
+
+    public alluserdata getUserobj() {
+        return userobj;
+    }
+
+    public void setUserobj(alluserdata userobj) {
+        this.userobj = userobj;
     }
 
     public LaunchTrip getObj() {
