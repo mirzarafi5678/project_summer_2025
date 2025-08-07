@@ -12,12 +12,7 @@ public class PassengerDashboardController {
     @javafx.fxml.FXML
     private Label seeYourIdPass;
 
-    @javafx.fxml.FXML
-    public void SeeHistoryAndTicketStatusButton(ActionEvent actionEvent) throws IOException {
-         SceneSwitcher.switchTo("/com/example/finalproject_oop213/MirzaMdSufianHridoy_fxml/historyAndStatus-page.fxml",actionEvent);
 
-
-    }
 
     @javafx.fxml.FXML
     public void ViewNoticeFromCounterButton(ActionEvent actionEvent) throws IOException {
@@ -62,6 +57,12 @@ public class PassengerDashboardController {
     public void BuyLaunchTripTicketButton(ActionEvent actionEvent) throws IOException {
 
         SceneSwitcher.switchTo("/com/example/finalproject_oop213/MirzaMdSufianHridoy_fxml/BuyLaunchTrip-Page.fxml", actionEvent);
+
+    }
+
+    @javafx.fxml.FXML
+    public void savepaymentinformationButton(ActionEvent actionEvent) throws IOException {
+        SceneSwitcher.switchTo("/com/example/finalproject_oop213/MirzaMdSufianHridoy_fxml/SavepaymentInformation.fxml",actionEvent);
 
     }
 }

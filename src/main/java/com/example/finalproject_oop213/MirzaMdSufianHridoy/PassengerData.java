@@ -1,20 +1,23 @@
 package com.example.finalproject_oop213.MirzaMdSufianHridoy;
 
-public class PassengerData  {
+public class PassengerData {
 
     public String fullname;
         public  String bkashNumber;
         public String phoneNo;
         public String gender, typeOfSeat;
         public int needBaseCargoSpace, NumberOfTicket;
-        public LaunchTrip obj;
-        public alluserdata userobj;
+        public LaunchTrip obj= null;
+        public alluserdata userobj= null;
+        public boolean boughtticket= false;
+        public boolean cancelticket = false;
+        public boolean givefeedback= false;
 
 
     public PassengerData(String fullname, LaunchTrip obj, int numberOfTicket, int needBaseCargoSpace,
-                         String typeOfSeat, String gender, String phoneNo, String bkashNumber ,alluserdata userobj) {
+                         String typeOfSeat, String gender, String phoneNo, String bkashNumber ) {
 
-        this.userobj=userobj;
+
         this.fullname = fullname;
         this.obj = obj;
         NumberOfTicket = numberOfTicket;
@@ -23,6 +26,14 @@ public class PassengerData  {
         this.gender = gender;
         this.phoneNo = phoneNo;
         this.bkashNumber = bkashNumber;
+    }
+
+    public boolean isGivefeedback() {
+        return givefeedback;
+    }
+
+    public void setGivefeedback(boolean givefeedback) {
+        this.givefeedback = givefeedback;
     }
 
     public alluserdata getUserobj() {
@@ -95,6 +106,22 @@ public class PassengerData  {
 
     public void setBkashNumber(String bkashNumber) {
         this.bkashNumber = bkashNumber;
+    }
+
+    public boolean isBoughtticket() {
+        return boughtticket;
+    }
+
+    public void setBoughtticket(boolean boughtticket) {
+        this.boughtticket = boughtticket;
+    }
+
+    public boolean isCancelticket() {
+        return cancelticket;
+    }
+
+    public void setCancelticket(boolean cancelticket) {
+        this.cancelticket = cancelticket;
     }
 
     @Override
