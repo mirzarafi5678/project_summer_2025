@@ -93,7 +93,7 @@ public class BuyLaunchTripPageController2 {
 
         System.out.println("button worked");
 
-        alluserdata obj1=null;
+
 
         LaunchTrip obj = null;
 
@@ -130,11 +130,12 @@ public class BuyLaunchTripPageController2 {
                     TypeOfSeatComboBox.getValue(),
                     GenderComboBox.getValue(),
                     PhoneNoTF.getText(),
-                    BkashNoTF.getText(),obj1
+                    BkashNoTF.getText()
 
             );
 
             addInList.addPassengerData(datas);
+            StatusShow.setWrapText(true);
             StatusShow.setText("Successfully selected your trip . now go to payment options");
 
         } else {

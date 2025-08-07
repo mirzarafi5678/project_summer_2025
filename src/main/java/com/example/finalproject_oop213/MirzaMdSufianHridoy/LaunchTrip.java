@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class LaunchTrip implements Serializable {
 
     public String tripnumber, from, to, starttime;
-    public int estimatedhour,price;
+    public int estimatedhour, price;
     public String date;
 
 
@@ -47,7 +47,7 @@ public class LaunchTrip implements Serializable {
     }
 
     public int getEstimatedhour() {
-        return  estimatedhour;
+        return estimatedhour;
     }
 
     public void setEstimatedhour(int estimatedhour) {
@@ -79,4 +79,16 @@ public class LaunchTrip implements Serializable {
     }
 
 
+    @Override
+    public String toString() {
+        return "LaunchTrip{" +
+                "tripnumber='" + tripnumber + '\'' +
+                ", from='" + from + '\'' +
+                ", to='" + to + '\'' +
+                ", starttime='" + starttime + '\'' +
+                ", estimatedhour=" + estimatedhour +
+                ", price=" + price +
+                ", date='" + date + '\'' +
+                '}';
+    }
 }
