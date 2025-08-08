@@ -1,5 +1,6 @@
 package com.example.finalproject_oop213.MirzaMdSufianHridoy.PassengerController;
 
+import com.example.finalproject_oop213.MirzaMdSufianHridoy.PutObjectInBinFileOrTxtFile;
 import com.example.finalproject_oop213.MirzaMdSufianHridoy.SceneSwitcher;
 import com.example.finalproject_oop213.MirzaMdSufianHridoy.addInList;
 import javafx.event.ActionEvent;
@@ -53,6 +54,7 @@ public class MakePaymentPageController {
         }else {
             addInList.bb.get(addInList.bb.size() - 1).setBoughtticket(true);
             addInList.bb.get(addInList.bb.size() - 1).setCancelticket(false);
+            PutObjectInBinFileOrTxtFile.overwriteTxtFile("passengerdata.txt",addInList.bb.size() - 1);
 //            need to put this thing in txt file
 
 
@@ -92,6 +94,7 @@ public class MakePaymentPageController {
 
 //        int totalPrice=0;
         int totalPrice=  sum1 +sum2 + sum3;
+        addInList.bb.get(addInList.bb.size() - 1).setTotalprice(totalPrice);
 
         String str = "Base Ticket Price: " + sum1 + "\n"
                 + "Cargo Space Charge: " + sum2 + "\n"
