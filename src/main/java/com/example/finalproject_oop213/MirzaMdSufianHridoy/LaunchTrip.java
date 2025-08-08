@@ -4,26 +4,30 @@ import java.io.Serializable;
 
 public class LaunchTrip implements Serializable {
 
-    public String TripNumber, From, To, StartTime;
-    public int estimatedHour,price;
+    public String tripnumber, from, to, starttime;
+    public int estimatedhour, price;
     public String date;
 
-    public LaunchTrip(String from,String tripNumber,String to,String startTime, int estimatedHour, int price, String date   ) {
-        this.TripNumber = tripNumber;
+
+    public LaunchTrip(String tripnumber, String date, int price, int estimatedhour, String starttime,
+                      String to, String from) {
+        this.tripnumber = tripnumber;
         this.date = date;
         this.price = price;
-        this.estimatedHour = estimatedHour;
-        this.StartTime = startTime;
-        this.To = to;
-        this.From = from;
+        this.estimatedhour = estimatedhour;
+        this.starttime = starttime;
+        this.to = to;
+        this.from = from;
+
     }
 
-    public String getTripNumber() {
-        return TripNumber;
+
+    public String getTripnumber() {
+        return tripnumber;
     }
 
-    public void setTripNumber(String tripNumber) {
-        TripNumber = tripNumber;
+    public void setTripnumber(String tripnumber) {
+        this.tripnumber = tripnumber;
     }
 
     public String getDate() {
@@ -42,35 +46,49 @@ public class LaunchTrip implements Serializable {
         this.price = price;
     }
 
-    public int getEstimatedHour() {
-        return estimatedHour;
+    public int getEstimatedhour() {
+        return estimatedhour;
     }
 
-    public void setEstimatedHour(int estimatedHour) {
-        this.estimatedHour = estimatedHour;
+    public void setEstimatedhour(int estimatedhour) {
+        this.estimatedhour = estimatedhour;
     }
 
-    public String getStartTime() {
-        return StartTime;
+    public String getStarttime() {
+        return starttime;
     }
 
-    public void setStartTime(String startTime) {
-        StartTime = startTime;
+    public void setStarttime(String starttime) {
+        this.starttime = starttime;
     }
 
     public String getTo() {
-        return To;
+        return to;
     }
 
     public void setTo(String to) {
-        To = to;
+        this.to = to;
     }
 
     public String getFrom() {
-        return From;
+        return from;
     }
 
     public void setFrom(String from) {
-        From = from;
+        this.from = from;
+    }
+
+
+    @Override
+    public String toString() {
+        return "LaunchTrip{" +
+                "tripnumber='" + tripnumber + '\'' +
+                ", from='" + from + '\'' +
+                ", to='" + to + '\'' +
+                ", starttime='" + starttime + '\'' +
+                ", estimatedhour=" + estimatedhour +
+                ", price=" + price +
+                ", date='" + date + '\'' +
+                '}';
     }
 }
