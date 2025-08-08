@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="710.0" prefWidth="644.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.IsratJahan-fxml.FinancialOfficer-FxmlFile.financialRecordController">
+<AnchorPane prefHeight="710.0" prefWidth="644.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.IsratJahan.financialRecordController">
    <children>
       <TableView fx:id="statementTable" layoutY="406.0" prefHeight="289.0" prefWidth="635.0">
         <columns>

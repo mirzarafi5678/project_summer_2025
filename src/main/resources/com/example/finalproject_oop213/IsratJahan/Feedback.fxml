@@ -8,22 +8,22 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.IsratJahan-fxml.CallCenterAgent-FxmlFile.Feedback">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.IsratJahan.FeedbackController">
    <children>
-      <TextField layoutX="22.0" layoutY="26.0" promptText="Feedback Number" />
-      <ComboBox layoutX="22.0" layoutY="64.0" prefWidth="150.0" promptText="FeedBack Type" />
-      <DatePicker layoutX="22.0" layoutY="101.0" prefHeight="26.0" prefWidth="160.0" promptText="Feedback Date" />
-      <Button layoutX="60.0" layoutY="141.0" mnemonicParsing="false" text="Save" />
-      <Button layoutX="127.0" layoutY="141.0" mnemonicParsing="false" text="Update" />
-      <Button layoutX="213.0" layoutY="141.0" mnemonicParsing="false" text="Back" />
-      <TableView layoutX="14.0" layoutY="186.0" prefHeight="200.0" prefWidth="445.0">
+      <TextField fx:id="feedbackTextField" layoutX="22.0" layoutY="26.0" promptText="Feedback Number" />
+      <ComboBox fx:id="feedBackTypeComboBox" layoutX="22.0" layoutY="64.0" prefWidth="150.0" promptText="FeedBack Type" />
+      <DatePicker fx:id="feedbackDate" layoutX="22.0" layoutY="101.0" prefHeight="26.0" prefWidth="160.0" promptText="Feedback Date" />
+      <Button layoutX="60.0" layoutY="141.0" mnemonicParsing="false" onAction="#saveButton" text="Save" />
+      <Button layoutX="127.0" layoutY="141.0" mnemonicParsing="false" onAction="#updateButton" text="Update" />
+      <Button layoutX="213.0" layoutY="141.0" mnemonicParsing="false" onAction="#BackButton" text="Back" />
+      <TableView fx:id="tableView" layoutX="14.0" layoutY="186.0" prefHeight="200.0" prefWidth="445.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Number" />
-          <TableColumn prefWidth="75.0" text="Type" />
-            <TableColumn prefWidth="75.0" text="Date" />
-            <TableColumn prefWidth="115.0" text="Details" />
+          <TableColumn fx:id="numberColumn" prefWidth="75.0" text="Number" />
+          <TableColumn fx:id="typeColumn" prefWidth="75.0" text="Type" />
+            <TableColumn fx:id="dateColumn" prefWidth="75.0" text="Date" />
+            <TableColumn fx:id="detailsColumn" prefWidth="115.0" text="Details" />
         </columns>
       </TableView>
-      <TextField layoutX="195.0" layoutY="26.0" prefHeight="99.0" prefWidth="160.0" promptText="Details" />
+      <TextField fx:id="feedBackDetailsTextField" layoutX="195.0" layoutY="26.0" prefHeight="99.0" prefWidth="160.0" promptText="Details" />
    </children>
 </AnchorPane>

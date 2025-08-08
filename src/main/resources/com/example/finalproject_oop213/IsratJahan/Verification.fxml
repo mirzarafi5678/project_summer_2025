@@ -7,21 +7,20 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.IsratJahan-fxml.CallCenterAgent-FxmlFile.Verification">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.IsratJahan.VerificationController">
    <children>
-      <TextField layoutX="28.0" layoutY="43.0" promptText="Input ID" />
-      <TextField layoutX="28.0" layoutY="82.0" promptText="Current ID" />
-      <Label layoutX="211.0" layoutY="48.0" prefHeight="63.0" prefWidth="174.0" style="-fx-background-color: tan;" text="Message" />
-      <Button layoutX="417.0" layoutY="48.0" mnemonicParsing="false" text="Back" />
-      <Button layoutX="417.0" layoutY="82.0" mnemonicParsing="false" text="Update" />
-      <TableView layoutX="38.0" layoutY="174.0" prefHeight="200.0" prefWidth="542.0">
+      <TextField fx:id="inputIdTextField" layoutX="28.0" layoutY="43.0" promptText="Input ID" />
+      <TextField fx:id="currentIDTextField" layoutX="28.0" layoutY="82.0" promptText="Current ID" />
+      <Label fx:id="messageLabel" layoutX="211.0" layoutY="48.0" prefHeight="63.0" prefWidth="174.0" style="-fx-background-color: tan;" text="Message" />
+      <Button layoutX="417.0" layoutY="48.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
+      <Button layoutX="417.0" layoutY="82.0" mnemonicParsing="false" onAction="#updateButton" text="Update" />
+      <TableView fx:id="tableView" layoutX="38.0" layoutY="174.0" prefHeight="200.0" prefWidth="542.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="ID" />
-          <TableColumn prefWidth="75.0" text="Name" />
-            <TableColumn prefWidth="75.0" text="Type" />
-            <TableColumn prefWidth="75.0" text="date" />
-            <TableColumn prefWidth="75.0" text="Details" />
+          <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="typeColumn" prefWidth="75.0" text="Type" />
+            <TableColumn fx:id="datecolumn" prefWidth="75.0" text="date" />
+            <TableColumn fx:id="detailsColumn" prefWidth="75.0" text="Details" />
         </columns>
       </TableView>
    </children>

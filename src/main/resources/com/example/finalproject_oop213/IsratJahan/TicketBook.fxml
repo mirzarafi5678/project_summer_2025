@@ -8,24 +8,23 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.IsratJahan-fxml.CallCenterAgent-FxmlFile.TicketBook">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.IsratJahan.TicketBookController">
    <children>
-      <TextField layoutX="30.0" layoutY="37.0" promptText="Passenger Name" />
-      <ComboBox layoutX="35.0" layoutY="76.0" prefWidth="150.0" promptText="Ticket category" />
-      <DatePicker layoutX="27.0" layoutY="115.0" prefHeight="26.0" prefWidth="160.0" promptText="Date of Journey" />
-      <TextField layoutX="30.0" layoutY="148.0" promptText="Ticket Price" />
-      <Button layoutX="234.0" layoutY="116.0" mnemonicParsing="false" text="Add" />
-      <Button layoutX="309.0" layoutY="116.0" mnemonicParsing="false" text="Back" />
-      <TableView layoutX="35.0" layoutY="186.0" prefHeight="200.0" prefWidth="526.0">
+      <TextField fx:id="nameTextField" layoutX="30.0" layoutY="37.0" promptText="Passenger Name" />
+      <ComboBox fx:id="categoryComboBox" layoutX="35.0" layoutY="76.0" prefWidth="150.0" promptText="Ticket category" />
+      <DatePicker fx:id="date" layoutX="27.0" layoutY="115.0" prefHeight="26.0" prefWidth="160.0" promptText="Date of Journey" />
+      <TextField fx:id="ticketPriceTextField" layoutX="30.0" layoutY="148.0" promptText="Ticket Price" />
+      <Button layoutX="234.0" layoutY="116.0" mnemonicParsing="false" onAction="#addButton" text="Add" />
+      <Button layoutX="309.0" layoutY="116.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
+      <TableView fx:id="tableView" layoutX="35.0" layoutY="186.0" prefHeight="200.0" prefWidth="526.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Name" />
-          <TableColumn prefWidth="75.0" text="Date" />
-            <TableColumn prefWidth="75.0" text="ID" />
-            <TableColumn prefWidth="75.0" text="Category" />
-            <TableColumn prefWidth="75.0" text="Price" />
+          <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
+          <TableColumn fx:id="dateColumn" prefWidth="75.0" text="Date" />
+            <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" />
+            <TableColumn fx:id="categoryColumn" prefWidth="75.0" text="Category" />
+            <TableColumn fx:id="priceColumn" prefWidth="75.0" text="Price" />
         </columns>
       </TableView>
-      <TextField layoutX="220.0" layoutY="50.0" promptText="Ticket ID" />
+      <TextField fx:id="ticketIDTextField" layoutX="220.0" layoutY="50.0" promptText="Ticket ID" />
    </children>
 </AnchorPane>
