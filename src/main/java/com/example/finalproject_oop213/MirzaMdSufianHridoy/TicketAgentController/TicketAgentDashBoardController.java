@@ -11,31 +11,40 @@ public class TicketAgentDashBoardController {
     public void SeeBookingSummeryButton(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
-    public void acceptAndRejectTicketButton(ActionEvent actionEvent) {
-    }
+
 
     @javafx.fxml.FXML
     public void AddLunchTripButton(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
-    public void LogOutButton(ActionEvent actionEvent) {
-    }
 
-    @javafx.fxml.FXML
-    public void ManageCancelTicketButton(ActionEvent actionEvent) {
-    }
+
 
     @javafx.fxml.FXML
     public void CraetApassengerTicketButton(ActionEvent actionEvent) {
     }
 
+
+
     @javafx.fxml.FXML
-    public void ViewAllPassengerAndStatusButton(ActionEvent actionEvent) {
+    public void SeeAllPassengerCargoSpace(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
-    public void EditTicketButton(ActionEvent actionEvent) {
+    public void DownlaodAllPassegerDetail(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void ViewAllPassengerFromDatabaseButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void RemovePassengerTicket(ActionEvent actionEvent) {
+    }
+    @javafx.fxml.FXML
+    public void LogOutButton(ActionEvent actionEvent) {
+    }
+
+
+
 }

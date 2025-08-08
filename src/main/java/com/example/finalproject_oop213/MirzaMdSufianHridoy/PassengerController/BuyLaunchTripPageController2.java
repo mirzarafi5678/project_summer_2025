@@ -6,6 +6,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BuyLaunchTripPageController2 {
     @javafx.fxml.FXML
@@ -75,6 +77,7 @@ public class BuyLaunchTripPageController2 {
         } catch (Exception e) {
             e.printStackTrace(); // Print exceptions for debugging
         }
+
     }
 
 
@@ -133,7 +136,7 @@ public class BuyLaunchTripPageController2 {
                     BkashNoTF.getText()
 
             );
-
+            PutObjectInBinFileOrTxtFile.overwriteTxtFile("passengerdata.txt",datas);
             addInList.addPassengerData(datas);
             StatusShow.setWrapText(true);
             StatusShow.setText("Successfully selected your trip . now go to payment options");
