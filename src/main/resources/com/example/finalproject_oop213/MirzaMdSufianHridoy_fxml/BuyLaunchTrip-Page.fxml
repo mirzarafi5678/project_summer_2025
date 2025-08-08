@@ -8,7 +8,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="692.0" prefWidth="874.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.MirzaMdSufianHridoy.PassengerController.BuyLaunchTripPageController">
+<AnchorPane prefHeight="692.0" prefWidth="874.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.MirzaMdSufianHridoy.PassengerController.BuyLaunchTripPageController2">
    <children>
       <TextField fx:id="FullnameTF" layoutX="151.0" layoutY="46.0" />
       <TextField fx:id="PhoneNoTF" layoutX="145.0" layoutY="91.0" />
@@ -40,5 +40,6 @@
       <Label fx:id="StatusShow" layoutX="476.0" layoutY="528.0" prefHeight="129.0" prefWidth="231.0" style="-fx-border-color: black;" />
       <Label layoutX="432.0" layoutY="583.0" prefHeight="17.0" prefWidth="83.0" text="Status" />
       <Button layoutX="43.0" layoutY="632.0" mnemonicParsing="false" onAction="#BackDashboardButton" text="Back To Dashboard" />
+      <Button layoutX="91.0" layoutY="184.0" mnemonicParsing="false" onAction="#loadtablebutton" text="Load Table" />
    </children>
 </AnchorPane>

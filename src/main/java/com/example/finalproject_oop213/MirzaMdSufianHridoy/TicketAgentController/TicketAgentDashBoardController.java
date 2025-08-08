@@ -2,7 +2,7 @@ package com.example.finalproject_oop213.MirzaMdSufianHridoy.TicketAgentControlle
 
 import javafx.event.ActionEvent;
 
-public class TicketAgentDashboardController {
+public class TicketAgentDashBoardController {
     @javafx.fxml.FXML
     public void AddNoticeButton(ActionEvent actionEvent) {
     }
