@@ -8,27 +8,27 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="542.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.IsratJahan-fxml.FinancialOfficer-FxmlFile.UtilitesExpenseFxml">
+<AnchorPane prefHeight="542.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.IsratJahan.UtilitesExpenseFxmlController">
    <children>
-      <TextField layoutX="138.0" layoutY="67.0" />
-      <TextField layoutX="138.0" layoutY="102.0" />
-      <ComboBox layoutX="84.0" layoutY="147.0" prefWidth="150.0" />
+      <TextField fx:id="expenseDetailsTextField" layoutX="138.0" layoutY="67.0" />
+      <TextField fx:id="amountTextField" layoutX="138.0" layoutY="102.0" />
+      <ComboBox fx:id="purposeComboBox" layoutX="84.0" layoutY="147.0" prefWidth="150.0" />
       <Text layoutX="4.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expense Details" />
       <Text layoutX="14.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="amount" />
       <Text layoutX="14.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="purpose" />
-      <TableView layoutX="34.0" layoutY="317.0" prefHeight="200.0" prefWidth="567.0">
+      <TableView fx:id="tableView" layoutX="34.0" layoutY="317.0" prefHeight="200.0" prefWidth="567.0">
         <columns>
-          <TableColumn prefWidth="89.0" text="Serial No" />
-          <TableColumn prefWidth="117.0" text="Amount" />
-            <TableColumn prefWidth="110.0" text="Details" />
-            <TableColumn prefWidth="143.0" text="purpose" />
-            <TableColumn prefWidth="107.0" text="Date" />
+          <TableColumn fx:id="serialNumberColumn" prefWidth="89.0" text="Serial No" />
+          <TableColumn fx:id="amountColumn" prefWidth="117.0" text="Amount" />
+            <TableColumn fx:id="detailsColumn" prefWidth="110.0" text="Details" />
+            <TableColumn fx:id="purposeColumn" prefWidth="143.0" text="purpose" />
+            <TableColumn fx:id="dateColumn" prefWidth="107.0" text="Date" />
         </columns>
       </TableView>
-      <Button layoutX="290.0" layoutY="180.0" mnemonicParsing="false" text="add" />
-      <Button layoutX="350.0" layoutY="180.0" mnemonicParsing="false" text="delete" />
-      <Button layoutX="412.0" layoutY="180.0" mnemonicParsing="false" text="update" />
-      <Button layoutX="481.0" layoutY="180.0" mnemonicParsing="false" text="Sort" />
-      <Button layoutX="344.0" layoutY="245.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="178.0" text="Back Dashboard" />
+      <Button layoutX="290.0" layoutY="180.0" mnemonicParsing="false" onAction="#addButton" text="add" />
+      <Button layoutX="350.0" layoutY="180.0" mnemonicParsing="false" onAction="#deleteButton" text="delete" />
+      <Button layoutX="412.0" layoutY="180.0" mnemonicParsing="false" onAction="#updateButton" text="update" />
+      <Button layoutX="481.0" layoutY="180.0" mnemonicParsing="false" onAction="#sortButton" text="Sort" />
+      <Button layoutX="344.0" layoutY="245.0" mnemonicParsing="false" onAction="#backButton" prefHeight="26.0" prefWidth="178.0" text="Back Dashboard" />
    </children>
 </AnchorPane>

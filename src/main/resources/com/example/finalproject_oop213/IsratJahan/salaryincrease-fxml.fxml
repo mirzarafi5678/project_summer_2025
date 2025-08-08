@@ -7,22 +7,21 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.IsratJahan-fxml.FinancialOfficer-FxmlFile.SalaryincreaseFxml">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.IsratJahan.SalaryincreaseFxmlController">
    <children>
-      <TableView layoutX="16.0" layoutY="194.0" prefHeight="200.0" prefWidth="568.0">
+      <TableView fx:id="tableView" layoutX="16.0" layoutY="194.0" prefHeight="200.0" prefWidth="568.0">
         <columns>
-          <TableColumn prefWidth="107.0" text="Employee ID" />
-          <TableColumn prefWidth="136.0" text="EmployeeName" />
-            <TableColumn prefWidth="157.0" text="Ampount" />
-            <TableColumn prefWidth="157.0" text="Date Of Implement" />
+          <TableColumn fx:id="employeeIDColumn" prefWidth="107.0" text="Employee ID" />
+          <TableColumn fx:id="employeeNameColumn" prefWidth="136.0" text="EmployeeName" />
+            <TableColumn fx:id="amountColumn" prefWidth="157.0" text="Amount" />
+            <TableColumn fx:id="dateColumn" prefWidth="157.0" text="Date Of Implement" />
         </columns>
       </TableView>
-      <Button layoutX="417.0" layoutY="155.0" mnemonicParsing="false" text="Back dashboard" />
-      <TextField layoutX="53.0" layoutY="32.0" text="Employee ID" />
-      <TextField layoutX="53.0" layoutY="66.0" text="Employee Name" />
-      <TextField layoutX="53.0" layoutY="103.0" text="Amount" />
-      <DatePicker layoutX="53.0" layoutY="142.0" prefHeight="26.0" prefWidth="160.0" />
-      <Button layoutX="417.0" layoutY="103.0" mnemonicParsing="false" text="Add Salary" />
+      <Button layoutX="417.0" layoutY="155.0" mnemonicParsing="false" onAction="#backButton" text="Back dashboard" />
+      <TextField fx:id="employeeIDTextField" layoutX="53.0" layoutY="32.0" promptText="Employee ID" />
+      <TextField fx:id="employeeNameTextField" layoutX="53.0" layoutY="66.0" promptText="Employee Name" />
+      <TextField fx:id="amountTextField" layoutX="53.0" layoutY="103.0" promptText="Amount" />
+      <DatePicker fx:id="dateTextField" layoutX="53.0" layoutY="142.0" prefHeight="26.0" prefWidth="160.0" promptText="date" />
+      <Button layoutX="417.0" layoutY="103.0" mnemonicParsing="false" onAction="#addButton" text="Add Salary" />
    </children>
 </AnchorPane>
