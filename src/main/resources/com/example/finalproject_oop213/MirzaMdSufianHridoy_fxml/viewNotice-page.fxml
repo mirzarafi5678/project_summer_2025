@@ -4,11 +4,10 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="481.0" prefWidth="653.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.MirzaMdSufianHridoy_fxml.PassengerFxmlFiles.ViewNoticePage">
+<AnchorPane prefHeight="481.0" prefWidth="653.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.MirzaMdSufianHridoy.PassengerController.ViewNoticePageController">
    <children>
-      <Label layoutX="11.0" layoutY="57.0" prefHeight="342.0" prefWidth="623.0" style="-fx-border-color: black;" />
+      <Label fx:id="ShowNotice" layoutX="11.0" layoutY="57.0" prefHeight="342.0" prefWidth="623.0" style="-fx-border-color: black;" />
       <Label layoutX="181.0" layoutY="36.0" text="Notice From Ticket Agent" />
-      <Button layoutX="41.0" layoutY="413.0" mnemonicParsing="false" text="Back to dashboard " />
+      <Button layoutX="41.0" layoutY="413.0" mnemonicParsing="false" onAction="#DahboardButton" text="Back to dashboard " />
    </children>
 </AnchorPane>

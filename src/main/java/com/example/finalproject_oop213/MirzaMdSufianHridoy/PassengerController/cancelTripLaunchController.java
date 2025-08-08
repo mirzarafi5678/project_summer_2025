@@ -44,11 +44,13 @@ public class cancelTripLaunchController {
     public void CancelTicketButton(ActionEvent actionEvent) {
 
         if (addInList.bb.size() > 0 && addInList.bb.get(addInList.bb.size() - 1) != null) {
-
-            addInList.bb.remove(addInList.bb.size() - 1);
-            SHowStatus.setText("Succesfully removes");
             addInList.bb.get(addInList.bb.size() - 1).setBoughtticket(false);
             addInList.bb.get(addInList.bb.size() - 1).setCancelticket(true);
+
+            PutObjectInBinFileOrTxtFile.overwriteTxtFile("passengerdata.txt",addInList.bb.size() - 1);
+            addInList.bb.remove(addInList.bb.size() - 1);
+            SHowStatus.setText("Succesfully removes");
+
 //            need to put the data in txt file
 
 

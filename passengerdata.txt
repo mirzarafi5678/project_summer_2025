@@ -1,0 +1,3 @@
+LaunchTrip{tripnumber='112', from='Sylhet', to='Sylhet', starttime='5:10AM', estimatedhour=8, price=900, date='12-03-2025'}
+
+PassengerData{fullname='dfht', bkashNumber='45245', phoneNo='24542', gender='Female', typeOfSeat='Sitting Seats', needBaseCargoSpace=22, NumberOfTicket=22, obj=LaunchTrip{tripnumber='112', from='Sylhet', to='Sylhet', starttime='5:10AM', estimatedhour=8, price=900, date='12-03-2025'}, userobj=null, boughtticket=true, cancelticket=false, givefeedback=false, totalprice=24640}
