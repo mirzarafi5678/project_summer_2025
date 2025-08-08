@@ -50,7 +50,7 @@ public class PassengerDashboardController {
 
     @javafx.fxml.FXML
     public void DownloadTicketButton(ActionEvent actionEvent) throws IOException {
-        SceneSwitcher.switchTo("com/example/finalproject_oop213/MirzaMdSufianHridoy_fxml/DownloaadScene.fxml");
+        SceneSwitcher.switchTo("/com/example/finalproject_oop213/MirzaMdSufianHridoy_fxml/DownloaadScene.fxml");
     }
 
     @javafx.fxml.FXML

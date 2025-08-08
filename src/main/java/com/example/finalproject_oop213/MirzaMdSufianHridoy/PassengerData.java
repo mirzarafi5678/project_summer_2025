@@ -12,6 +12,7 @@ public class PassengerData {
         public boolean boughtticket= false;
         public boolean cancelticket = false;
         public boolean givefeedback= false;
+        public int totalprice=0;
 
 
     public PassengerData(String fullname, LaunchTrip obj, int numberOfTicket, int needBaseCargoSpace,
@@ -30,6 +31,14 @@ public class PassengerData {
 
     public boolean isGivefeedback() {
         return givefeedback;
+    }
+
+    public int getTotalprice() {
+        return totalprice;
+    }
+
+    public void setTotalprice(int totalprice) {
+        this.totalprice = totalprice;
     }
 
     public void setGivefeedback(boolean givefeedback) {
@@ -126,7 +135,7 @@ public class PassengerData {
 
     @Override
     public String toString() {
-        return "PassengerData{" +
+        return "\n"+"PassengerData{" +
                 "fullname='" + fullname + '\'' +
                 ", bkashNumber='" + bkashNumber + '\'' +
                 ", phoneNo='" + phoneNo + '\'' +
@@ -134,9 +143,12 @@ public class PassengerData {
                 ", typeOfSeat='" + typeOfSeat + '\'' +
                 ", needBaseCargoSpace=" + needBaseCargoSpace +
                 ", NumberOfTicket=" + NumberOfTicket +
+                ", obj=" + obj +
+                ", userobj=" + userobj +
+                ", boughtticket=" + boughtticket +
+                ", cancelticket=" + cancelticket +
+                ", givefeedback=" + givefeedback +
+                ", totalprice=" + totalprice +
                 '}';
-
     }
-
-
 }

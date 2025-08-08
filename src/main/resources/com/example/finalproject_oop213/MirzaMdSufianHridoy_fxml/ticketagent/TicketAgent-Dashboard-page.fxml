@@ -12,14 +12,14 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button layoutX="69.0" layoutY="102.0" mnemonicParsing="false" onAction="#acceptAndRejectTicketButton" text="Accept and Reject ticket" />
-      <Button layoutX="70.0" layoutY="151.0" mnemonicParsing="false" onAction="#CraetApassengerTicketButton" text="Create A Passenger Ticket" />
-      <Button layoutX="69.0" layoutY="243.0" mnemonicParsing="false" onAction="#EditTicketButton" text="Edit  Passenger Ticket" />
-      <Button layoutX="69.0" layoutY="285.0" mnemonicParsing="false" onAction="#ManageCancelTicketButton" text="Manage Cancel Request Ticket" />
-      <Button layoutX="74.0" layoutY="331.0" mnemonicParsing="false" onAction="#AddNoticeButton" text="Add notice For All Passenger" />
-      <Button layoutX="73.0" layoutY="378.0" mnemonicParsing="false" onAction="#SeeBookingSummeryButton" text="See Booking Summery with Statistics" />
-      <Button layoutX="70.0" layoutY="201.0" mnemonicParsing="false" onAction="#ViewAllPassengerAndStatusButton" text="View All Passenger and their ticket status" />
-       <Button layoutX="72.0" layoutY="421.0" mnemonicParsing="false" onAction="#AddLunchTripButton" text="Change or Add Launch Trip Schedule" />
+      <Button layoutX="53.0" layoutY="397.0" mnemonicParsing="false" onAction="#DownlaodAllPassegerDetail" text="Download all passenger ticket detail " />
+      <Button layoutX="58.0" layoutY="88.0" mnemonicParsing="false" onAction="#CraetApassengerTicketButton" text="Create A Passenger Ticket" />
+      <Button layoutX="58.0" layoutY="173.0" mnemonicParsing="false" onAction="#RemovePassengerTicket" text="remove Passenger Ticket" />
+      <Button layoutX="58.0" layoutY="215.0" mnemonicParsing="false" onAction="#SeeAllPassengerCargoSpace" text="See all passenger cargo space" />
+      <Button layoutX="58.0" layoutY="264.0" mnemonicParsing="false" onAction="#AddNoticeButton" text="Add notice For Passenger" />
+      <Button layoutX="62.0" layoutY="310.0" mnemonicParsing="false" onAction="#CalculatePriceButton" text="Calculate Price of a Particuler passenger" />
+      <Button layoutX="61.0" layoutY="131.0" mnemonicParsing="false" onAction="#ViewAllPassengerFromDatabaseButton" text="View All Passenger from database" />
+       <Button layoutX="61.0" layoutY="352.0" mnemonicParsing="false" onAction="#AddLunchTripButton" text=" Add Launch Trip Schedule" />
        <Button layoutX="278.0" layoutY="514.0" mnemonicParsing="false" onAction="#LogOutButton" text="Log out" />
    </children>
 </AnchorPane>
