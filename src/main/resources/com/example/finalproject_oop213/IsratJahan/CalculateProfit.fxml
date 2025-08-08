@@ -6,22 +6,22 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.IsratJahan-fxml.FinancialOfficer-FxmlFile.TicketStandard">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.IsratJahan.CalculateProfitController">
    <children>
-      <Label layoutX="65.0" layoutY="276.0" prefHeight="38.0" prefWidth="156.0" text="Deposit" />
-      <Label layoutX="229.0" layoutY="276.0" prefHeight="38.0" prefWidth="156.0" text="overallrevenue" />
-      <Label layoutX="65.0" layoutY="230.0" prefHeight="38.0" prefWidth="156.0" text="total expense" />
-      <TableView layoutX="21.0" layoutY="14.0" prefHeight="200.0" prefWidth="562.0">
+      <Label fx:id="depositLabel" layoutX="65.0" layoutY="276.0" prefHeight="38.0" prefWidth="156.0" text="Deposit" />
+      <Label fx:id="revenueLabel" layoutX="229.0" layoutY="276.0" prefHeight="38.0" prefWidth="156.0" text="overallrevenue" />
+      <Label fx:id="expenseLabal" layoutX="65.0" layoutY="230.0" prefHeight="38.0" prefWidth="156.0" text="total expense" />
+      <TableView fx:id="tableView" layoutX="21.0" layoutY="14.0" prefHeight="200.0" prefWidth="562.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="purpose" />
-          <TableColumn prefWidth="75.0" text="Add Amount" />
-            <TableColumn prefWidth="75.0" text="Date" />
-            <TableColumn prefWidth="106.0" text="invest Amount" />
-            <TableColumn prefWidth="106.0" text="Revenue" />
-            <TableColumn prefWidth="124.0" text="Profit" />
+          <TableColumn fx:id="purposeColumn" prefWidth="75.0" text="purpose" />
+          <TableColumn fx:id="addAmountColumn" prefWidth="75.0" text="Add Amount" />
+            <TableColumn fx:id="dateColumn" prefWidth="75.0" text="Date" />
+            <TableColumn fx:id="investAmountColumn" prefWidth="106.0" text="invest Amount" />
+            <TableColumn fx:id="revenueColumn" prefWidth="106.0" text="Revenue" />
+            <TableColumn fx:id="profitColumn" prefWidth="124.0" text="Profit" />
         </columns>
       </TableView>
-      <Button layoutX="445.0" layoutY="288.0" mnemonicParsing="false" text="calculate" />
-      <Button layoutX="445.0" layoutY="329.0" mnemonicParsing="false" text="Back Dashboard" />
+      <Button layoutX="445.0" layoutY="288.0" mnemonicParsing="false" onAction="#calculateButton" text="calculate" />
+      <Button layoutX="445.0" layoutY="329.0" mnemonicParsing="false" onAction="#BackButton" text="Back Dashboard" />
    </children>
 </AnchorPane>

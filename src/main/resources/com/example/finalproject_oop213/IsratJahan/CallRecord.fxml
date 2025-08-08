@@ -8,24 +8,24 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="590.0" prefWidth="570.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.IsratJahan-fxml.CallCenterAgent-FxmlFile.CallRecord">
+<AnchorPane prefHeight="590.0" prefWidth="570.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.IsratJahan.CallRecordController">
    <children>
-      <Button layoutX="296.0" layoutY="231.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="215.0" text="Back" />
-      <TableView layoutX="30.0" layoutY="376.0" prefHeight="200.0" prefWidth="512.0">
+      <Button layoutX="296.0" layoutY="231.0" mnemonicParsing="false" onAction="#BackButton" prefHeight="26.0" prefWidth="215.0" text="Back" />
+      <TableView fx:id="TableView" layoutX="30.0" layoutY="376.0" prefHeight="200.0" prefWidth="512.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="ID" />
-          <TableColumn prefWidth="75.0" text="Name" />
-            <TableColumn prefWidth="75.0" text="Date" />
-            <TableColumn prefWidth="75.0" text="Details" />
+          <TableColumn fx:id="IDColumn" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="dateColumn" prefWidth="75.0" text="Date" />
+            <TableColumn fx:id="detailsColumn" prefWidth="75.0" text="Details" />
         </columns>
       </TableView>
-      <Button layoutX="296.0" layoutY="269.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="215.0" text="Save" />
-      <Button layoutX="296.0" layoutY="311.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="215.0" text="Export to PDF" />
-      <TextField layoutX="36.0" layoutY="49.0" promptText="Complainer ID" />
-      <TextField layoutX="36.0" layoutY="90.0" promptText="Complainer Name" />
-      <DatePicker layoutX="36.0" layoutY="132.0" prefHeight="26.0" prefWidth="160.0" promptText="Date " />
+      <Button layoutX="296.0" layoutY="269.0" mnemonicParsing="false" onAction="#saveButton" prefHeight="26.0" prefWidth="215.0" text="Save" />
+      <Button layoutX="296.0" layoutY="311.0" mnemonicParsing="false" onAction="#exportPDFButton" prefHeight="26.0" prefWidth="215.0" text="Export to PDF" />
+      <TextField fx:id="complainerIDTextField" layoutX="36.0" layoutY="49.0" promptText="Complainer ID" />
+      <TextField fx:id="complainerNameTextField" layoutX="36.0" layoutY="90.0" promptText="Complainer Name" />
+      <DatePicker fx:id="DateOFComplain" layoutX="36.0" layoutY="132.0" prefHeight="26.0" prefWidth="160.0" promptText="Date " />
       <Text layoutX="259.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Call Record " wrappingWidth="74.0" />
-      <TextField layoutX="36.0" layoutY="164.0" promptText="Number Of complain" />
-      <TextField layoutX="36.0" layoutY="198.0" prefHeight="97.0" prefWidth="160.0" promptText="Details" />
+      <TextField fx:id="NumberOfComplainText" layoutX="36.0" layoutY="164.0" promptText="Number Of complain" />
+      <TextField fx:id="complainDetailsText" layoutX="36.0" layoutY="198.0" prefHeight="97.0" prefWidth="160.0" promptText="Details" />
    </children>
 </AnchorPane>
