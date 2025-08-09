@@ -1,11 +1,14 @@
 package com.example.finalproject_oop213.MirzaMdSufianHridoy.TicketAgentController;
 
+import com.example.finalproject_oop213.MirzaMdSufianHridoy.CreatePassengerTicket;
 import com.example.finalproject_oop213.MirzaMdSufianHridoy.LaunchTrip;
+import com.example.finalproject_oop213.MirzaMdSufianHridoy.PutObjectInBinFileOrTxtFile;
 import com.example.finalproject_oop213.MirzaMdSufianHridoy.SceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.io.IOException;
+import java.io.*;
 
 public class RemoveOrAddLaunchTripPageController {
     @javafx.fxml.FXML
@@ -42,18 +45,90 @@ public class RemoveOrAddLaunchTripPageController {
     private TableColumn <LaunchTrip,String>FromColumn;
     @javafx.fxml.FXML
     private TableColumn <LaunchTrip,String>TripNumberColumn;
+//     public String tripnumber, from, to, starttime;
+//    public int estimatedhour, price;
+//    public String date;
+    @javafx.fxml.FXML
+    void initialize(){
+        TripNumberColumn.setCellValueFactory(new PropertyValueFactory<LaunchTrip,String>("tripnumber"));
+        FromColumn.setCellValueFactory(new PropertyValueFactory<LaunchTrip,String>("from"));
+        ToColumn.setCellValueFactory(new PropertyValueFactory<LaunchTrip,String>("to"));
+        DateColumn.setCellValueFactory(new PropertyValueFactory<LaunchTrip,String>("date"));
+        PriceColumn.setCellValueFactory(new PropertyValueFactory<LaunchTrip,String>("price"));
+        EstimatedColumn.setCellValueFactory(new PropertyValueFactory<LaunchTrip,String>("estimatedhour"));
+        StartTimeColumn.setCellValueFactory(new PropertyValueFactory<LaunchTrip,String>("starttime"));
+    }
+
+    Alert aa= new Alert(Alert.AlertType.ERROR);
 
     @javafx.fxml.FXML
     public void LoadDatabaseButton(ActionEvent actionEvent) {
+        Tableview.getItems().clear();
+        aa.setContentText("No content");
+        File f = new File("LaunchInfo.bin");
+        if (f.exists()) {
+            try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f))) {
+            while (true) {
+                try {
+                    LaunchTrip trip = (LaunchTrip) ois.readObject();
+                    System.out.println(trip.getTripnumber());
+                    Tableview.getItems().add(trip);
+
+                } catch (EOFException e) {
+                    break; // End of file
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace(); // Print exceptions for debugging
+        }}else {
+            aa.show();
+        }
     }
 
     @javafx.fxml.FXML
     public void AddDatabaseButton(ActionEvent actionEvent) {
+             if ( TripTF.getText().isEmpty() || FromTF.getText().isEmpty() || DateTF.getText().isEmpty() || ToTF.getText().isEmpty()||
+                      PriceTF.getText().isEmpty() || EstimatedTF.getText().isEmpty()|| StartTimeTF.getText().isEmpty()){
+                 aa.setContentText("Fillup Everything");
+                 aa.show();
+                 return;
+             }
+//String tripnumber, String date, int price, int estimatedhour, String starttime,
+//                      String to, String from
+             LaunchTrip t = new LaunchTrip(TripTF.getText(),DateTF.getText(),Integer.parseInt(PriceTF.getText()),Integer.parseInt(EstimatedTF.getText()),
+                     StartTimeTF.getText(),ToTF.getText(),FromTF.getText());
+        PutObjectInBinFileOrTxtFile.writeObjInBinaryFile("LaunchInfo.bin",t);
+        StatusShow.setWrapText(true);
+        StatusShow.setText("New data has been added to the database. Load the data to see the newly added entries");
+
     }
 
 
     @javafx.fxml.FXML
     public void RemoveTripButton(ActionEvent actionEvent) {
+        if ( RemoveTripTF.getText().isEmpty()){
+            aa.setContentText("Put trip Number");
+            aa.show();
+            return;
+        }
+
+
+        boolean remove=PutObjectInBinFileOrTxtFile.removeParticularObjectFromBinFile("LaunchInfo.bin",
+                    obj -> obj instanceof LaunchTrip && ((LaunchTrip) obj).getTripnumber().equals(RemoveTripTF.getText()));
+
+        if (remove) {
+            StatusShow.setWrapText(true);
+            StatusShow.setText("Succesfully removed");
+
+        }else {
+            StatusShow.setWrapText(true);
+            StatusShow.setText("Data is not in database");
+        }
+
+
+
+
+
     }
 
     @javafx.fxml.FXML
