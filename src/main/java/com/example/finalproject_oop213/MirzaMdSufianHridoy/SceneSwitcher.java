@@ -33,7 +33,7 @@ public class SceneSwitcher {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxml));
             Scene nextScene = new Scene(fxmlLoader.load());
             Stage nextStage = new Stage();
-            nextStage.setTitle("Student View");
+//            nextStage.setTitle("Student View");
             nextStage.setScene(nextScene);
             nextStage.show();
         } catch (Exception e) {

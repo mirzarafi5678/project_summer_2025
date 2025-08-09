@@ -7,6 +7,7 @@ public class LaunchTrip implements Serializable {
     public String tripnumber, from, to, starttime;
     public int estimatedhour, price;
     public String date;
+//    public int trippassengerCount=0;
 
 
     public LaunchTrip(String tripnumber, String date, int price, int estimatedhour, String starttime,
@@ -20,6 +21,7 @@ public class LaunchTrip implements Serializable {
         this.from = from;
 
     }
+
 
 
     public String getTripnumber() {
