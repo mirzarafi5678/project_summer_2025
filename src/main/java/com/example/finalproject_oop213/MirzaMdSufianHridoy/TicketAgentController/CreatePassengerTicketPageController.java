@@ -42,7 +42,7 @@ public class CreatePassengerTicketPageController {
 
     @javafx.fxml.FXML
     void initialize(){
-        GenderSelectComboBox.getItems().addAll("Male","Femal");
+        GenderSelectComboBox.getItems().addAll("Male","Female");
         SeatTypeComboBox.getItems().addAll("Sitting Seats", "Chair Seats", "Berths");
 
         NameColumn.setCellValueFactory(new PropertyValueFactory<CreatePassengerTicket,String>("nametf"));
@@ -109,26 +109,50 @@ public class CreatePassengerTicketPageController {
                 Integer.parseInt(NumberOfSeatTF.getText()),Integer.parseInt(CargoSpaceTF.getText()),Integer.parseInt(SetIdTF.getText()),
                 SeatTypeComboBox.getValue(),GenderSelectComboBox.getValue(),TripNumberTF.getText());
 
-        PutObjectInBinFileOrTxtFile.writeObjInBinaryFile("CreatedByCounter.bin",p1);
-        status.setWrapText(true);
-        status.setText("Launch ticket available and added to database");
+            int TotalPrice=0;
+            if (p1.seattype.equals("Sitting Seats")){
+                TotalPrice+=(p1.numberofseat* 200) + (p1.numberofseat*p1.obj.price) + (p1.cargosapce * 20);
+            }
+            if (p1.seattype.equals("Chair Seats")){
+                TotalPrice+=(p1.numberofseat* 100) + (p1.numberofseat*p1.obj.price) + (p1.cargosapce * 20);
+            }
+            if (p1.seattype.equals("Berths")){
+                TotalPrice+=(p1.numberofseat* 300) + (p1.numberofseat*p1.obj.price) + (p1.cargosapce * 20);
+            }
 
-        TableView.getItems().add(p1);
+
+            p1.bigprice(TotalPrice);
+
+            PutObjectInBinFileOrTxtFile.writeObjInBinaryFile("CreatedByCounter.bin",p1);
+            status.setWrapText(true);
+            status.setText("Launch ticket available and added to database");
+            TableView.getItems().add(p1);
         }else {
             status.setWrapText(true);
             status.setText("Launch ticket is no available");
 
 
-
         }
-
-
-
-
-
 
     }
 
 
+    @javafx.fxml.FXML
+    public void RewriteDtabaseButton(ActionEvent actionEvent) {
+        File file = new File("CreatedByCounter.bin");
 
+        if (file.exists()) {
+            if (file.delete()) {
+                status.setWrapText(true);
+                status.setText("All data has been successfully removed. Now, add the new data to the database");
+            } else {
+                System.out.println("Failed to delete the file.");
+            }
+        } else {
+            System.out.println("File does not exist.");
+        }
+
+
+
+    }
 }
