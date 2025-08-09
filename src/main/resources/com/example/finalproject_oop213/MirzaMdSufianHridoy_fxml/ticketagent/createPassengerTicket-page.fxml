@@ -21,7 +21,7 @@
             <TableColumn fx:id="ContactNumberColumn" prefWidth="196.0" text="Conatct Number" />
         </columns>
       </TableView>
-      <Button layoutX="173.0" layoutY="237.0" mnemonicParsing="false" onAction="#AddButton" text="Add" />
+      <Button layoutX="24.0" layoutY="237.0" mnemonicParsing="false" onAction="#AddButton" text="Add data to database" />
       <Label layoutX="54.0" layoutY="89.0" text="Set Id" />
       <TextField fx:id="SetIdTF" layoutX="108.0" layoutY="85.0" />
       <Label layoutX="55.0" layoutY="136.0" text="Trip Number" />
@@ -38,5 +38,6 @@
       <Label layoutX="51.0" layoutY="178.0" text="Contact Number" />
       <Label fx:id="status" layoutX="456.0" layoutY="199.0" prefHeight="77.0" prefWidth="161.0" style="-fx-border-color: black;" />
       <Label layoutX="386.0" layoutY="229.0" text="Show Status" />
+      <Button layoutX="171.0" layoutY="237.0" mnemonicParsing="false" onAction="#RewriteDtabaseButton" text="Remove all data from old database" />
    </children>
 </AnchorPane>
