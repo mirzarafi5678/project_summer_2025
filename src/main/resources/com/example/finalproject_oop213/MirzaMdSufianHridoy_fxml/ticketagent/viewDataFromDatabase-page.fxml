@@ -7,11 +7,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="802.0" prefWidth="883.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.MirzaMdSufianHridoy.TicketAgentController.viewAllDataController">
+<AnchorPane prefHeight="802.0" prefWidth="1002.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.MirzaMdSufianHridoy.TicketAgentController.viewAllDataController">
    <children>
-      <TableView fx:id="tableview" layoutX="27.0" layoutY="118.0" prefHeight="334.0" prefWidth="807.0">
+      <TableView fx:id="tableview" layoutX="27.0" layoutY="118.0" prefHeight="334.0" prefWidth="919.0">
         <columns>
           <TableColumn fx:id="passengernamecolumn" prefWidth="147.0" text="Passenger name" />
+            <TableColumn fx:id="GenderColumn" prefWidth="96.0" text="Gender" />
           <TableColumn fx:id="contactnumbercolumn" prefWidth="158.0" text="Conatct Number" />
             <TableColumn fx:id="tripnumbercolumn" prefWidth="118.0" text="Trip Number" />
             <TableColumn fx:id="numberofseatcolumn" prefWidth="105.0" text="number of seats" />
