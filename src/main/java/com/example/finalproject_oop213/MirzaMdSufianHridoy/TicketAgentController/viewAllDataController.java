@@ -38,6 +38,9 @@ public class viewAllDataController {
     private TableColumn<CreatePassengerTicket,String> seattypecolumn;
     Alert aa= new Alert(Alert.AlertType.ERROR);
     @javafx.fxml.FXML
+    private TableColumn <CreatePassengerTicket,String>GenderColumn;
+
+    @javafx.fxml.FXML
 
 //    public String  nametf,tripnumber,gender,seattype;
 //    public  int setid,cargosapce,numberofseat,contactnumber;
@@ -53,7 +56,7 @@ public class viewAllDataController {
         seattypecolumn.setCellValueFactory(new PropertyValueFactory<CreatePassengerTicket,String>("seattype"));
         cargospacecolumn.setCellValueFactory(new PropertyValueFactory<CreatePassengerTicket,String>("cargosapce"));
         tripnumbercolumn.setCellValueFactory(new PropertyValueFactory<CreatePassengerTicket,String>("tripnumber"));
-
+        GenderColumn.setCellValueFactory(new PropertyValueFactory<CreatePassengerTicket,String>("gender"));
 
 
 
