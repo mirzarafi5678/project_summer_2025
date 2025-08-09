@@ -40,10 +40,7 @@ public class TicketAgentDashBoardController {
         SceneSwitcher.switchTo("/com/example/finalproject_oop213/MirzaMdSufianHridoy_fxml/ticketagent/DownloadAllPassengerTicketDetail-Page.fxml");
     }
 
-    @javafx.fxml.FXML
-    public void ViewAllPassengerFromDatabaseButton(ActionEvent actionEvent) throws IOException {
-        SceneSwitcher.switchTo("/com/example/finalproject_oop213/MirzaMdSufianHridoy_fxml/ticketagent/viewAllPassengerFromDatabase-page.fxml",actionEvent);
-    }
+
 
     @javafx.fxml.FXML
     public void RemovePassengerTicket(ActionEvent actionEvent) throws IOException {
@@ -58,5 +55,10 @@ public class TicketAgentDashBoardController {
     @javafx.fxml.FXML
     public void CalculatePriceButton(ActionEvent actionEvent) throws IOException {
         SceneSwitcher.switchTo("/com/example/finalproject_oop213/MirzaMdSufianHridoy_fxml/ticketagent/CalculateTotalPrice-page.fxml");
+    }
+
+    @javafx.fxml.FXML
+    public void ViewAllDataFromDatabaseButton(ActionEvent actionEvent) throws IOException {
+        SceneSwitcher.switchTo("/com/example/finalproject_oop213/MirzaMdSufianHridoy_fxml/ticketagent/viewDataFromDatabase-page.fxml",actionEvent);
     }
 }

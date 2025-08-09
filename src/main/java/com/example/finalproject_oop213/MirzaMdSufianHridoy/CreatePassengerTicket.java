@@ -6,6 +6,7 @@ public class CreatePassengerTicket implements Serializable {
     public String  nametf,tripnumber,gender,seattype;
     public  int setid,cargosapce,numberofseat,contactnumber;
     public LaunchTrip obj=null;
+    public int yourtotalprice=0;
 
     public CreatePassengerTicket(String nametf, LaunchTrip obj, int contactnumber, int numberofseat, int cargosapce,
                                  int setid, String seattype, String gender, String tripnumber) {
@@ -18,6 +19,16 @@ public class CreatePassengerTicket implements Serializable {
         this.seattype = seattype;
         this.gender = gender;
         this.tripnumber = tripnumber;
+    }
+
+    public int getYourtotalprice() {
+        return yourtotalprice;
+    }
+
+
+
+    public void bigprice(int yourtotalprice) {
+        this.yourtotalprice += yourtotalprice;
     }
 
     public String getNametf() {
