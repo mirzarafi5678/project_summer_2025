@@ -151,17 +151,18 @@ public class PutObjectInBinFileOrTxtFile {
         }
     }
 
-    public static void removeParticularObjectFromBinFile(String filePath, ObjectMatcher matcher) {
+    public static boolean removeParticularObjectFromBinFile(String filePath, ObjectMatcher matcher) {
         List<Object> objects = readObjectsAsListFromBinaryFile(filePath);
         boolean removed = objects.removeIf(matcher::matches);
 
         if (!removed) {
             System.out.println("No matching object found to remove.");
-            return;
+            return false;
         }
 
         overwriteBinaryFileWithList(filePath, objects);
         System.out.println("Matching object removed successfully.");
+        return true;
     }
 
 
