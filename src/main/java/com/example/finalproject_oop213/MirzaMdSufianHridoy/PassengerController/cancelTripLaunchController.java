@@ -51,7 +51,7 @@ public class cancelTripLaunchController {
             addInList.bb.remove(addInList.bb.size() - 1);
             SHowStatus.setText("Succesfully removes");
 
-//            need to put the data in txt file
+
 
 
 
@@ -63,4 +63,7 @@ public class cancelTripLaunchController {
 
 
     }
+
+
+
 }

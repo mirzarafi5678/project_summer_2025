@@ -180,7 +180,7 @@ public class PutObjectInBinFileOrTxtFile {
                 try {
                     lastObject = ois.readObject();
                 } catch (EOFException eof) {
-                    break; // End of file reached
+                    break;
                 }
             }
         } catch (IOException | ClassNotFoundException e) {
