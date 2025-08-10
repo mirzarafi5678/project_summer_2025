@@ -1,0 +1,30 @@
+Total revenue generated: 8430
+Toal booked seat: 11
+CreatePassengerTicket{nametf='mirza md sufian hridoy
+, tripnumber='114
+, gender='Male
+, seattype='Berths
+, setid=11
+, cargosapce=12
+, numberofseat=3
+, contactnumber=1762359344
+, obj=LaunchTrip{tripnumber='114', from='Dhaka', to='Barishal', starttime='9:10PM', estimatedhour=9, price=1250, date='17-03-2025'}}
+CreatePassengerTicket{nametf='nahein tonmoy
+, tripnumber='112
+, gender='Male
+, seattype='Chair Seats
+, setid=11
+, cargosapce=5
+, numberofseat=2
+, contactnumber=1862359344
+, obj=LaunchTrip{tripnumber='112', from='Sylhet', to='Sylhet', starttime='5:10AM', estimatedhour=8, price=900, date='12-03-2025'}}
+CreatePassengerTicket{nametf='Rbaiul Islam
+, tripnumber='115
+, gender='Male
+, seattype='Chair Seats
+, setid=456
+, cargosapce=12
+, numberofseat=6
+, contactnumber=18127131
+, obj=LaunchTrip{tripnumber='115', from='Chadpur', to='Rangpur', starttime='11:50PM', estimatedhour=11, price=100, date='9-02-2025'}}
+

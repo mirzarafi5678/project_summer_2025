@@ -166,9 +166,9 @@ public class viewAllDataController {
 
     }
 
+
     @javafx.fxml.FXML
     public void dashboardbutton(ActionEvent actionEvent) throws IOException {
         SceneSwitcher.switchTo("/com/example/finalproject_oop213/MirzaMdSufianHridoy_fxml/ticketagent/TicketAgent-Dashboard-page.fxml", actionEvent);
-
     }
 }
