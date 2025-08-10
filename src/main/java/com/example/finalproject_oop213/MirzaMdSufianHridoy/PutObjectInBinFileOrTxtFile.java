@@ -165,6 +165,31 @@ public class PutObjectInBinFileOrTxtFile {
         return true;
     }
 
+    public static Object getLastObjectFromBinaryFile(String filePath) {
+        File file = new File(filePath);
+
+        if (!file.exists() || file.length() == 0) {
+            System.out.println("File is empty or does not exist.");
+            return null;
+        }
+
+        Object lastObject = null;
+
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
+            while (true) {
+                try {
+                    lastObject = ois.readObject();
+                } catch (EOFException eof) {
+                    break; // End of file reached
+                }
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return lastObject;
+    }
+
 
 
 }

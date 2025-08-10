@@ -37,7 +37,7 @@ public class TicketAgentDashBoardController {
 
     @javafx.fxml.FXML
     public void DownlaodAllPassegerDetail(ActionEvent actionEvent) throws IOException {
-        SceneSwitcher.switchTo("/com/example/finalproject_oop213/MirzaMdSufianHridoy_fxml/ticketagent/DownloadAllPassengerTicketDetail-Page.fxml");
+        SceneSwitcher.switchTo("/com/example/finalproject_oop213/MirzaMdSufianHridoy_fxml/ticketagent/DownloadSummeryDetail-Page.fxml");
     }
 
 
