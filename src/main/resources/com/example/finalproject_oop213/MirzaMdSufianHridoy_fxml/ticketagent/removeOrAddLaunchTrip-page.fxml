@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane prefHeight="713.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.MirzaMdSufianHridoy.TicketAgentController.RemoveOrAddLaunchTripPageController">
+<AnchorPane prefHeight="713.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.MirzaMdSufianHridoy.TicketAgentController.AddLaunchTripPageController">
    <children>
       <TableView fx:id="Tableview" layoutX="18.0" layoutY="335.0" prefHeight="291.0" prefWidth="717.0">
         <columns>
@@ -41,8 +41,5 @@
       <Label layoutX="39.0" layoutY="31.0" text="Trip number" />
       <TextField fx:id="DateTF" layoutX="304.0" layoutY="63.0" prefHeight="25.0" prefWidth="131.0" />
       <Line endX="-62.0" endY="73.0" layoutX="562.0" layoutY="99.0" startX="-62.0" startY="-86.0" />
-      <TextField fx:id="RemoveTripTF" layoutX="550.0" layoutY="63.0" prefHeight="25.0" prefWidth="52.0" />
-      <Label layoutX="514.0" layoutY="43.0" text="Trip numbe you want to remover" />
-      <Button layoutX="527.0" layoutY="108.0" mnemonicParsing="false" onAction="#RemoveTripButton" text="Remove From Database" />
    </children>
 </AnchorPane>

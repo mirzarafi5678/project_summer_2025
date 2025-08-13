@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class savepaymentcontroller {
 
@@ -57,6 +58,7 @@ public class savepaymentcontroller {
 
     @javafx.fxml.FXML
     public void AddButton(ActionEvent actionEvent) {
+
         Alert aa = new Alert(Alert.AlertType.ERROR);
         if (HolderNameTF.getText().isEmpty() ||  NameOfBankTF.getText().isEmpty() || BankTypeComboBox.getValue()==null || ExpiryDateTF.getValue()==null){
             aa.setContentText("Fill up Everything");
@@ -69,10 +71,26 @@ public class savepaymentcontroller {
                 BankTypeComboBox.getValue(),
                 NumberOrCardNoTF.getText(),
                 ExpiryDateTF.getValue(),NameOfBankTF.getText() );
-        addInList.addsavePayment(data);
+//        addInList.addsavePayment(data);
+
+
+        sessionmanager.latestuser.pass.add(data);
+        PutObjectInBinFileOrTxtFile.updateUser(sessionmanager.latestuser);
         Tableview.getItems().add(data);
         StatusShow.setWrapText(true);
         StatusShow.setText("Successfully added");
+
+
+
+    }
+
+    @javafx.fxml.FXML
+    public void loadDatabutton(ActionEvent actionEvent) {
+       Tableview.getItems().clear();
+        for (mvcOFsavePayment savepayment : sessionmanager.latestuser.pass.ss){
+            Tableview.getItems().add(savepayment);
+
+        }
 
 
 

@@ -93,4 +93,29 @@ public class LaunchTrip implements Serializable {
                 ", date='" + date + '\'' +
                 '}';
     }
+
+
+
+    public String style1() {
+        return String.format(
+                "---------------------------%n" +
+                        "       LAUNCH TICKET%n" +
+                        "---------------------------%n" +
+                        "Trip Number    : %s%n" +
+                        "From           : %s%n" +
+                        "To             : %s%n" +
+                        "Start Time     : %s%n" +
+                        "Estimated Hour : %d%n" +
+                        "Price          : %d%n" +
+                        "Date           : %s%n" +
+                        "---------------------------",
+                tripnumber, from, to, starttime, estimatedhour, price, date
+        );
+    }
+
+
+
 }
+
+
+

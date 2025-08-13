@@ -1,6 +1,9 @@
 package com.example.finalproject_oop213.MirzaMdSufianHridoy;
 
-public class PassengerData {
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class PassengerData implements  Serializable {
 
     public String fullname;
         public  String bkashNumber;
@@ -8,11 +11,13 @@ public class PassengerData {
         public String gender, typeOfSeat;
         public int needBaseCargoSpace, NumberOfTicket;
         public LaunchTrip obj= null;
-        public alluserdata userobj= null;
+
         public boolean boughtticket= false;
         public boolean cancelticket = false;
         public boolean givefeedback= false;
         public int totalprice=0;
+
+        public ArrayList<mvcOFsavePayment> ss= new ArrayList<>();
 
 
     public PassengerData(String fullname, LaunchTrip obj, int numberOfTicket, int needBaseCargoSpace,
@@ -28,6 +33,8 @@ public class PassengerData {
         this.phoneNo = phoneNo;
         this.bkashNumber = bkashNumber;
     }
+
+
 
     public boolean isGivefeedback() {
         return givefeedback;
@@ -45,12 +52,13 @@ public class PassengerData {
         this.givefeedback = givefeedback;
     }
 
-    public alluserdata getUserobj() {
-        return userobj;
+    public ArrayList<mvcOFsavePayment> getSave() {
+        return ss;
     }
 
-    public void setUserobj(alluserdata userobj) {
-        this.userobj = userobj;
+    public void add(mvcOFsavePayment savedata) {
+
+        ss.add(savedata);
     }
 
     public LaunchTrip getObj() {
@@ -144,11 +152,82 @@ public class PassengerData {
                 ", needBaseCargoSpace=" + needBaseCargoSpace +
                 ", NumberOfTicket=" + NumberOfTicket +
                 ", obj=" + obj +
-                ", userobj=" + userobj +
+
                 ", boughtticket=" + boughtticket +
                 ", cancelticket=" + cancelticket +
                 ", givefeedback=" + givefeedback +
                 ", totalprice=" + totalprice +
                 '}';
     }
+
+
+    public String style1() {
+        return String.format(
+                "\n---------------------------\n" +
+                        "      PASSENGER DATA\n" +
+                        "---------------------------\n" +
+                        "Full Name       : %s%n" +
+                        "bKash Number    : %s%n" +
+                        "Phone No        : %s%n" +
+                        "Gender          : %s%n" +
+                        "Type of Seat    : %s%n" +
+                        "Cargo Space     : %d%n" +
+                        "No. of Tickets  : %d%n" +
+                        "Launch Trip     : %s%n" +
+                        "Bought Ticket   : %b%n" +
+                        "Cancelled Ticket: %b%n" +
+                        "Gave Feedback   : %b%n" +
+                        "Total Price     : %d%n" +
+                        "---------------------------",
+                fullname, bkashNumber, phoneNo, gender, typeOfSeat,
+                needBaseCargoSpace, NumberOfTicket,obj,
+                boughtticket, cancelticket, givefeedback, totalprice
+        );
+    }
+    public String style2() {
+        String tripDetails = (obj != null)
+                ? String.format(
+                "  Trip Number    : %s%n" +
+                        "  From           : %s%n" +
+                        "  To             : %s%n" +
+                        "  Start Time     : %s%n" +
+                        "  Estimated Hour : %d%n" +
+                        "  Price          : %d%n" +
+                        "  Date           : %s%n",
+                obj.tripnumber, obj.from, obj.to, obj.starttime,
+                obj.estimatedhour, obj.price, obj.date
+        )
+                : "  No trip assigned%n";
+
+        return String.format(
+                "\n===========================\n" +
+                        "      PASSENGER TICKET\n" +
+                        "===========================\n" +
+                        "Full Name       : %s%n" +
+                        "bKash Number    : %s%n" +
+                        "Phone No        : %s%n" +
+                        "Gender          : %s%n" +
+                        "Type of Seat    : %s%n" +
+                        "Cargo Space     : %d%n" +
+                        "No. of Tickets  : %d%n" +
+                        "Bought Ticket   : %b%n" +
+                        "Cancelled Ticket: %b%n" +
+                        "Gave Feedback   : %b%n" +
+                        "Total Price     : %d%n" +
+                        "---------------------------\n" +
+                        "   LAUNCH TRIP DETAILS\n" +
+                        "---------------------------\n" +
+                        "%s" +
+                        "===========================",
+                fullname, bkashNumber, phoneNo, gender, typeOfSeat,
+                needBaseCargoSpace, NumberOfTicket,
+                boughtticket, cancelticket, givefeedback, totalprice,
+                tripDetails
+        );
+    }
+
+
+
+
+
 }

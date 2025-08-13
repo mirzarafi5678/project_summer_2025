@@ -1,14 +1,12 @@
 package com.example.finalproject_oop213.MirzaMdSufianHridoy.TicketAgentController;
 
-import com.example.finalproject_oop213.MirzaMdSufianHridoy.CreatePassengerTicket;
+import com.example.finalproject_oop213.MirzaMdSufianHridoy.CreateTicket;
 import com.example.finalproject_oop213.MirzaMdSufianHridoy.PutObjectInBinFileOrTxtFile;
-import com.example.finalproject_oop213.MirzaMdSufianHridoy.SceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.ObjectInputStream;
 
 
@@ -29,7 +27,7 @@ public class DownloadBokingSummeryController {
             FileInputStream fis = new FileInputStream(f1);
             ObjectInputStream ois = new ObjectInputStream(fis);
             while(true){
-                CreatePassengerTicket cp=(CreatePassengerTicket)ois.readObject();
+                CreateTicket cp=(CreateTicket)ois.readObject();
                 totalbooking+=cp.numberofseat;
             }
         }
@@ -40,6 +38,7 @@ public class DownloadBokingSummeryController {
             aa.setContentText("Database is empty");
             aa.show();
 
+
         }
         File f2 = new File("CreatedByCounter.bin");
         if (f2.exists()) {
@@ -49,7 +48,7 @@ public class DownloadBokingSummeryController {
                 ObjectInputStream ois = new ObjectInputStream(fis);
                 while(true){
                     int perPrice=0;
-                    CreatePassengerTicket cp= (CreatePassengerTicket) ois.readObject();
+                    CreateTicket cp= (CreateTicket) ois.readObject();
                     if (cp.seattype.equals("Sitting Seats")){
                         perPrice+= (cp.numberofseat* 200) + (cp.numberofseat*cp.obj.price) + (cp.cargosapce * 20);
                         tottalPrice+=perPrice;
@@ -72,6 +71,8 @@ public class DownloadBokingSummeryController {
         str= PutObjectInBinFileOrTxtFile.readObjFromBinaryFile("CreatedByCounter.bin");
         str1="Total revenue generated: " + tottalPrice+ "\n"
                 +"Toal booked seat: "+ totalbooking+"\n" + str;
+
+
         ShowDeatil.setWrapText(true);
         ShowDeatil.setText("Total revenue generated: " + tottalPrice+ "\n"
                              +"Toal booked seat: "+ totalbooking+"\n"+str);

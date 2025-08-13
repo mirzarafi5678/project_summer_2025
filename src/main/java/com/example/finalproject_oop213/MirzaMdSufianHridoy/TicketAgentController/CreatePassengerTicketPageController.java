@@ -1,6 +1,6 @@
 package com.example.finalproject_oop213.MirzaMdSufianHridoy.TicketAgentController;
 
-import com.example.finalproject_oop213.MirzaMdSufianHridoy.CreatePassengerTicket;
+import com.example.finalproject_oop213.MirzaMdSufianHridoy.CreateTicket;
 import com.example.finalproject_oop213.MirzaMdSufianHridoy.LaunchTrip;
 import com.example.finalproject_oop213.MirzaMdSufianHridoy.PutObjectInBinFileOrTxtFile;
 import com.example.finalproject_oop213.MirzaMdSufianHridoy.SceneSwitcher;
@@ -12,7 +12,7 @@ import java.io.*;
 
 public class CreatePassengerTicketPageController {
     @javafx.fxml.FXML
-    private TableColumn<CreatePassengerTicket,String> NameColumn;
+    private TableColumn<CreateTicket,String> NameColumn;
     @javafx.fxml.FXML
     private TextField ContactNumberTF;
     @javafx.fxml.FXML
@@ -20,21 +20,21 @@ public class CreatePassengerTicketPageController {
     @javafx.fxml.FXML
     private ComboBox<String> GenderSelectComboBox;
     @javafx.fxml.FXML
-    private TableColumn <CreatePassengerTicket,String>ContactNumberColumn;
+    private TableColumn <CreateTicket,String>ContactNumberColumn;
     @javafx.fxml.FXML
     private TextField SetIdTF;
     @javafx.fxml.FXML
     private TextField CargoSpaceTF;
     @javafx.fxml.FXML
-    private TableColumn <CreatePassengerTicket,String>IdColumn;
+    private TableColumn <CreateTicket,String>IdColumn;
     @javafx.fxml.FXML
     private TextField TripNumberTF;
     @javafx.fxml.FXML
     private TextField NameTF;
     @javafx.fxml.FXML
-    private TableView <CreatePassengerTicket>TableView;
+    private TableView <CreateTicket>TableView;
     @javafx.fxml.FXML
-    private TableColumn <CreatePassengerTicket,String> TripNumberColumn;
+    private TableColumn <CreateTicket,String> TripNumberColumn;
     @javafx.fxml.FXML
     private ComboBox <String>SeatTypeComboBox;
     @javafx.fxml.FXML
@@ -45,10 +45,10 @@ public class CreatePassengerTicketPageController {
         GenderSelectComboBox.getItems().addAll("Male","Female");
         SeatTypeComboBox.getItems().addAll("Sitting Seats", "Chair Seats", "Berths");
 
-        NameColumn.setCellValueFactory(new PropertyValueFactory<CreatePassengerTicket,String>("nametf"));
-        ContactNumberColumn.setCellValueFactory(new PropertyValueFactory<CreatePassengerTicket,String>("contactnumber"));
-        IdColumn.setCellValueFactory(new PropertyValueFactory<CreatePassengerTicket,String>("setid"));
-        TripNumberColumn.setCellValueFactory(new PropertyValueFactory<CreatePassengerTicket,String>("tripnumber"));
+        NameColumn.setCellValueFactory(new PropertyValueFactory<CreateTicket,String>("nametf"));
+        ContactNumberColumn.setCellValueFactory(new PropertyValueFactory<CreateTicket,String>("contactnumber"));
+        IdColumn.setCellValueFactory(new PropertyValueFactory<CreateTicket,String>("setid"));
+        TripNumberColumn.setCellValueFactory(new PropertyValueFactory<CreateTicket,String>("tripnumber"));
 
     }
 
@@ -105,7 +105,7 @@ public class CreatePassengerTicketPageController {
 //        int setid, String seattype, String gender, String tripnumber
 
         if (obj != null){
-        CreatePassengerTicket p1 = new CreatePassengerTicket(NameTF.getText(),obj,Integer.parseInt(ContactNumberTF.getText() ),
+        CreateTicket p1 = new CreateTicket(NameTF.getText(),obj,Integer.parseInt(ContactNumberTF.getText() ),
                 Integer.parseInt(NumberOfSeatTF.getText()),Integer.parseInt(CargoSpaceTF.getText()),Integer.parseInt(SetIdTF.getText()),
                 SeatTypeComboBox.getValue(),GenderSelectComboBox.getValue(),TripNumberTF.getText());
 

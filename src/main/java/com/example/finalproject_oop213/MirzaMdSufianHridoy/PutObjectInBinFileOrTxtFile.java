@@ -108,7 +108,7 @@ public class PutObjectInBinFileOrTxtFile {
     }
 
     public static void appendLineToTxtFile(String filePath, String text) {
-        try (FileWriter fw = new FileWriter(filePath, true)) {  // 'true' means append mode
+        try (FileWriter fw = new FileWriter(filePath, true)) {
             fw.write(text + System.lineSeparator());
             System.out.println("Line added successfully.");
         } catch (IOException e) {
@@ -190,6 +190,43 @@ public class PutObjectInBinFileOrTxtFile {
         return lastObject;
     }
 
+    public static void updateUser(alluserdata updatedUser) {
+        // Step 1: Read all users
+        List<alluserdata> allUsers = new ArrayList<>();
+        File f = new File("User.bin");
+
+        if (f.exists()) {
+            try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f))) {
+                while (true) {
+                    try {
+                        alluserdata user = (alluserdata) ois.readObject();
+                        allUsers.add(user);
+                    } catch (EOFException e) {
+                        break;
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+
+        for (int i = 0; i < allUsers.size(); i++) {
+            if (allUsers.get(i).getSetUsername().equals(updatedUser.getSetUsername())) {
+                allUsers.set(i, updatedUser);
+                break;
+            }
+        }
+
+
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("User.bin"))) {
+            for (alluserdata user : allUsers) {
+                oos.writeObject(user);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 }

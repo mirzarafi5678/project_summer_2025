@@ -8,9 +8,7 @@
 
 <AnchorPane prefHeight="496.0" prefWidth="707.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.MirzaMdSufianHridoy.SignUpPageController">
    <children>
-      <Label layoutX="63.0" layoutY="34.0" text="set id" />
       <Button layoutX="140.0" layoutY="276.0" mnemonicParsing="false" onAction="#confirmButton" text="conftim" />
-      <TextField fx:id="setidTF" layoutX="104.0" layoutY="30.0" />
       <ComboBox fx:id="SelectUserComboBox" layoutX="154.0" layoutY="184.0" prefWidth="150.0" />
       <Label layoutX="63.0" layoutY="76.0" text="set username" />
       <TextField fx:id="setUsernameTF" layoutX="140.0" layoutY="72.0" />

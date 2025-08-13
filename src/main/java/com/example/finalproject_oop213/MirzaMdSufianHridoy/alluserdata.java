@@ -1,22 +1,32 @@
 package com.example.finalproject_oop213.MirzaMdSufianHridoy;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class alluserdata {
+public class alluserdata implements Serializable {
     private String setUsername;
     private String setpassword;
     private String setusertype;
-    private int setid;
+    public PassengerData pass=null;
 
 
-    public alluserdata(String setpassword, int setid, String setusertype, String setUsername) {
+
+
+    public alluserdata(String setpassword, String setusertype, String setUsername) {
         this.setpassword = setpassword;
-        this.setid = setid;
+
         this.setusertype = setusertype;
         this.setUsername = setUsername;
     }
 
 
+    public PassengerData getPass() {
+        return pass;
+    }
+
+    public void setPass(PassengerData pass) {
+        this.pass = pass;
+    }
 
     public String getSetUsername() {
         return setUsername;
@@ -26,13 +36,9 @@ public class alluserdata {
         this.setUsername = setUsername;
     }
 
-    public int getSetid() {
-        return setid;
-    }
 
-    public void setSetid(int setid) {
-        this.setid = setid;
-    }
+
+
 
     public String getSetusertype() {
         return setusertype;
@@ -50,12 +56,7 @@ public class alluserdata {
         this.setpassword = setpassword;
     }
 
-    @Override
-    public String toString() {
-        return "setUsername='" + setUsername + "," +
-                ", setpassword='" + setpassword + "," +
-                ", setusertype='" + setusertype + "," +
-                ", setid=" + setid + "\n"; }
+
 
 
 }

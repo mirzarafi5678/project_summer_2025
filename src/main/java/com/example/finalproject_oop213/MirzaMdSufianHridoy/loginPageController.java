@@ -3,7 +3,7 @@ package com.example.finalproject_oop213.MirzaMdSufianHridoy;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -31,45 +31,64 @@ public class loginPageController {
 
     @javafx.fxml.FXML
     public void logInButton(ActionEvent actionEvent) throws IOException {
-        String user="";
 
-        for ( alluserdata aa :  addInList.aa  ) {
-            if ( aa.getSetUsername().equals(usernameTF.getText()) && aa.getSetpassword().equals(passwordTF.getText())
-                     && aa.getSetusertype().equals(UserTypeComboBox.getValue()) )  {
+        if (usernameTF.getText().isEmpty() || passwordTF.getText().isEmpty() || UserTypeComboBox.getValue()==null){
+            Alert AA = new Alert(Alert.AlertType.ERROR);
+            AA.setContentText("Fill up properly");
+            AA.show();
+            return;
+        }
 
-                user= aa.getSetusertype();
-                break;
+
+        alluserdata userdata = null;
+
+        File f2 = new File("User.bin");
+        if (f2.exists()) {
+            try (FileInputStream fis = new FileInputStream(f2);
+                 ObjectInputStream ois = new ObjectInputStream(fis)) {
+
+                while (true) {
+                    try {
+                        alluserdata aa = (alluserdata) ois.readObject();
+
+                        if (aa.getSetUsername().equals(usernameTF.getText()) && aa.getSetpassword().equals(passwordTF.getText())
+                                && aa.getSetusertype().equals(UserTypeComboBox.getValue()) ) {
+                            userdata = aa;
+                            break;
+                        }
+
+                    } catch (EOFException eof) {
+                        break;
+                    }
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
             }
+
         }
-        System.out.println(user);
-        if (Objects.equals(user, "Passenger")) {
-            SceneSwitcher.switchTo("/com/example/finalproject_oop213/MirzaMdSufianHridoy_fxml/Passenger-Dashboard-page.fxml",actionEvent);
-            System.out.println("moved");
-        }
-        if (Objects.equals(user, "Ticket Agent")){
-            SceneSwitcher.switchTo("/com/example/finalproject_oop213/MirzaMdSufianHridoy_fxml/TicketAgent-Dashboard-page.fxml",actionEvent);
-        }
-        if (Objects.equals(user, "Call Center Agent")){
-          //
-        }
-        if (Objects.equals(user, "Financial Officer")){
-            //
-        }
-        if (Objects.equals(user, "Operation Manager")){
-            //
-        }
-        if (Objects.equals(user, "Guest User")){
-            //
-        }
-        if (Objects.equals(user, "Safety Inspector")){
-            //
-        }
-        if (Objects.equals(user, "Port Authority")){
-            //
-        }
+        if (userdata!=null){
+            if (userdata.getSetusertype().equals("Passenger")){
+                SceneSwitcher.switchTo("/com/example/finalproject_oop213/MirzaMdSufianHridoy_fxml/Passenger-Dashboard-page.fxml",actionEvent);
+               sessionmanager.latestuser=userdata;
+                System.out.println("moved");
+
+                return;
+            }
+            if (userdata.getSetusertype().equals("Ticket Agent")){
+                SceneSwitcher.switchTo("/com/example/finalproject_oop213/MirzaMdSufianHridoy_fxml/ticketagent/TicketAgent-Dashboard-page.fxml",actionEvent);
+                System.out.println("moved");
+                return;
+            }
 
 
+        }
+        else {
+                Alert AA = new Alert(Alert.AlertType.ERROR);
+                AA.setContentText("Username / Password / usertype is incorrect");
+                AA.show();
 
+        }
 
     }
 }
