@@ -1,8 +1,9 @@
 package com.example.finalproject_oop213.MirzaMdSufianHridoy;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class mvcOFsavePayment {
+public class mvcOFsavePayment implements Serializable  {
     public String holdername;
     public String nameofbanksystem;
     public LocalDate expirydate;

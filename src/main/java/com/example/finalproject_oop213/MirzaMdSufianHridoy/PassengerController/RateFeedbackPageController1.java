@@ -58,12 +58,18 @@ public class RateFeedbackPageController1 {
         Alert aa2 = new Alert(Alert.AlertType.INFORMATION);
         aa2.setTitle("Congratulations");
 
-        if (addInList.bb.size() > 0 && addInList.bb.get(addInList.bb.size() - 1) != null) {
+        if (sessionmanager.latestuser.pass==null){
+            aa.setContentText("You cant give feedback because you did not buy ticket");
+            aa.show();
+            return;
+        }
+
+        if (sessionmanager.latestuser.pass.obj!=null) {
 
             //
         }
         else{
-           aa.setContentText("You cant give feedback because you did not biuy ticket");
+           aa.setContentText("You cant give feedback because you did not buy ticket");
            aa.show();
            return;
         }
@@ -75,7 +81,9 @@ public class RateFeedbackPageController1 {
             aa.show();
             return;
         }
-        addInList.bb.get(addInList.bb.size() - 1).setGivefeedback(true);
+        sessionmanager.latestuser.pass.setGivefeedback(true);
+        PutObjectInBinFileOrTxtFile.overwriteTxtFile("passengerdata.txt",sessionmanager.latestuser.pass.style2());
+        PutObjectInBinFileOrTxtFile.updateUser(sessionmanager.latestuser);
         aa2.setContentText(" Thanks for giving feedback. if u pay the money of ur selection ticket its good or if u dont pls make" +
                 "payment of ur selected ticket ");
         aa2.show();

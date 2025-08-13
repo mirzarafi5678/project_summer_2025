@@ -71,7 +71,14 @@ public class ViewOtherTripController1 {
 
     @javafx.fxml.FXML
     public void ShowMyLaunchTripButton(ActionEvent actionEvent) {
-        if (addInList.bb.size() > 0 && addInList.bb.get(addInList.bb.size() - 1) != null) {
+        if (sessionmanager.latestuser.pass==null){
+            StatusShow.setText("Buy tickt first");
+            return;
+
+        }
+
+
+        if (sessionmanager.latestuser.pass.obj != null) {
 //            ticketDetails.setText( addInList.bb.get(addInList.bb.size() - 1).obj.toString());
 
         }else{
@@ -80,7 +87,7 @@ public class ViewOtherTripController1 {
             return;
         }
         StatusShow.setWrapText(true);
-        StatusShow.setText(addInList.bb.get(addInList.bb.size() - 1).obj.toString());
+        StatusShow.setText(sessionmanager.latestuser.pass.obj.toString());
 
 
     }

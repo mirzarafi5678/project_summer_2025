@@ -1,6 +1,5 @@
 package com.example.finalproject_oop213.MirzaMdSufianHridoy.TicketAgentController;
 
-import com.example.finalproject_oop213.MirzaMdSufianHridoy.CreatePassengerTicket;
 import com.example.finalproject_oop213.MirzaMdSufianHridoy.LaunchTrip;
 import com.example.finalproject_oop213.MirzaMdSufianHridoy.PutObjectInBinFileOrTxtFile;
 import com.example.finalproject_oop213.MirzaMdSufianHridoy.SceneSwitcher;
@@ -10,7 +9,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.*;
 
-public class RemoveOrAddLaunchTripPageController {
+public class AddLaunchTripPageController {
     @javafx.fxml.FXML
     private TextField StartTimeTF;
     @javafx.fxml.FXML
@@ -39,8 +38,6 @@ public class RemoveOrAddLaunchTripPageController {
     private TextField DateTF;
     @javafx.fxml.FXML
     private TextField TripTF;
-    @javafx.fxml.FXML
-    private TextField RemoveTripTF;
     @javafx.fxml.FXML
     private TableColumn <LaunchTrip,String>FromColumn;
     @javafx.fxml.FXML
@@ -104,32 +101,7 @@ public class RemoveOrAddLaunchTripPageController {
     }
 
 
-    @javafx.fxml.FXML
-    public void RemoveTripButton(ActionEvent actionEvent) {
-        if ( RemoveTripTF.getText().isEmpty()){
-            aa.setContentText("Put trip Number");
-            aa.show();
-            return;
-        }
 
-
-        boolean remove=PutObjectInBinFileOrTxtFile.removeParticularObjectFromBinFile("LaunchInfo.bin",
-                    obj -> obj instanceof LaunchTrip && ((LaunchTrip) obj).getTripnumber().equals(RemoveTripTF.getText()));
-
-        if (remove) {
-            StatusShow.setWrapText(true);
-            StatusShow.setText("Succesfully removed");
-
-        }else {
-            StatusShow.setWrapText(true);
-            StatusShow.setText("Data is not in database");
-        }
-
-
-
-
-
-    }
 
     @javafx.fxml.FXML
     public void DasboardButton(ActionEvent actionEvent) throws IOException {

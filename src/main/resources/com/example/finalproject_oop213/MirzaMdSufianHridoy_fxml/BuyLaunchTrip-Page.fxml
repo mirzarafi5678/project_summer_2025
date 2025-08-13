@@ -25,6 +25,7 @@
             <TableColumn fx:id="DateColumn" prefWidth="114.0" text="Date " />
             <TableColumn fx:id="StartTimeColumn" prefWidth="97.0" text=" Start Time" />
             <TableColumn fx:id="EstimatedHourColumn" prefWidth="165.0" text="Estimated Journey Hour" />
+            <TableColumn fx:id="pricecolumn" prefWidth="103.0" text="Price" />
         </columns>
       </TableView>
       <Label layoutX="52.0" layoutY="50.0" text="Full name" />

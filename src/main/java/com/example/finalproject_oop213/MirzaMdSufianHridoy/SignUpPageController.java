@@ -3,7 +3,7 @@ package com.example.finalproject_oop213.MirzaMdSufianHridoy;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 public class SignUpPageController {
@@ -13,8 +13,6 @@ public class SignUpPageController {
     private ComboBox <String> SelectUserComboBox;
     @javafx.fxml.FXML
     private TextField setUsernameTF;
-    @javafx.fxml.FXML
-    private TextField setidTF;
     @javafx.fxml.FXML
     private TextField SetPasswordTF;
     Alert aa= new Alert(Alert.AlertType.ERROR);
@@ -37,38 +35,59 @@ public class SignUpPageController {
 
     @javafx.fxml.FXML
     public void confirmButton(ActionEvent actionEvent) {
-          if (setidTF.getText().isEmpty() || setUsernameTF.getText().isEmpty() || SetPasswordTF.getText().isEmpty() || SelectUserComboBox.getValue()==null ){
+          if ( setUsernameTF.getText().isEmpty() || SetPasswordTF.getText().isEmpty() || SelectUserComboBox.getValue()==null ){
               aa.setContentText("Fill up EveryThing");
               aa.show();
               return;
           }
-          for ( alluserdata all : addInList.aa ){
-              if (all.getSetid()==Integer.parseInt(setidTF.getText())){
-                  aa.setContentText("this id already used. put different id ");
-                  aa.show();
-                  return;
-              }
-          }
-        for ( alluserdata all : addInList.aa ){
-            if (all.getSetUsername().equals(setUsernameTF.getText())){
-                aa.setContentText("this username already used. put different username ");
-                aa.show();
-                return;
+          alluserdata userdata = null;
+
+        File f2 = new File("User.bin");
+        if (f2.exists()) {
+            try (FileInputStream fis = new FileInputStream(f2);
+                 ObjectInputStream ois = new ObjectInputStream(fis)) {
+
+                while (true) {
+                    try {
+                        alluserdata t = (alluserdata) ois.readObject();
+
+                        if (t.getSetUsername().equals(setUsernameTF.getText())) {
+                            userdata = t;
+                            break;
+                        }
+
+                    } catch (EOFException eof) {
+                        break;
+                    }
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
             }
+
         }
 
+        if (userdata!=null){
+            StatusShowLabel.setWrapText(true);
+            StatusShowLabel.setText("This Username alreday used");
 
 
-          alluserdata datas =new alluserdata(
-                  SetPasswordTF.getText(),
-                  Integer.parseInt(setidTF.getText()),
-                  SelectUserComboBox.getValue(),
-                  setUsernameTF.getText() );
 
-          addInList.addAllUserData(datas);
-        System.out.println("added");
+        }else {
 
-          StatusShowLabel.setText("succesfully sign up .Now go log in page to your dashboard");
+
+            alluserdata datas =new alluserdata(
+                    SetPasswordTF.getText(),
+
+                    SelectUserComboBox.getValue(),
+                    setUsernameTF.getText() );
+
+            PutObjectInBinFileOrTxtFile.writeObjInBinaryFile("User.bin",datas);
+            System.out.println("added");
+            StatusShowLabel.setWrapText(true);
+            StatusShowLabel.setText("succesfully sign up .Now go log in page to your dashboard");
+
+        }
 
 
     }

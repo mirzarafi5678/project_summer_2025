@@ -29,11 +29,7 @@ public class TicketAgentDashBoardController {
 
 
 
-    @javafx.fxml.FXML
-    public void SeeAllPassengerCargoSpace(ActionEvent actionEvent) throws IOException {
-        SceneSwitcher.switchTo("/com/example/finalproject_oop213/MirzaMdSufianHridoy_fxml/ticketagent/SeeAllCargoSpaceInfo-Page.fxml",actionEvent);
 
-    }
 
     @javafx.fxml.FXML
     public void DownlaodAllPassegerDetail(ActionEvent actionEvent) throws IOException {
@@ -60,5 +56,14 @@ public class TicketAgentDashBoardController {
     @javafx.fxml.FXML
     public void ViewAllDataFromDatabaseButton(ActionEvent actionEvent) throws IOException {
         SceneSwitcher.switchTo("/com/example/finalproject_oop213/MirzaMdSufianHridoy_fxml/ticketagent/viewDataFromDatabase-page.fxml",actionEvent);
+    }
+
+
+
+
+
+    @javafx.fxml.FXML
+    public void removeLaunchTripButton(ActionEvent actionEvent) throws IOException {
+        SceneSwitcher.switchTo("/com/example/finalproject_oop213/MirzaMdSufianHridoy_fxml/ticketagent/lastButton-Page.fxml",actionEvent);
     }
 }

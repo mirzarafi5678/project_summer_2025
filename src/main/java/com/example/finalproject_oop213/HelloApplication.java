@@ -17,7 +17,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(
-                HelloApplication.class.getResource("/com/example/finalproject_oop213/MirzaMdSufianHridoy_fxml/Passenger-Dashboard-page.fxml"));
+                HelloApplication.class.getResource("/com/example/finalproject_oop213/MirzaMdSufianHridoy_fxml/SignUp_page.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Hello!");
@@ -37,9 +37,9 @@ public class HelloApplication extends Application {
 //        LaunchTrip t5 = new LaunchTrip("115","9-02-2025",100,11,"11:50PM","Rangpur","Chadpur");
 //        LaunchTrip t6 = new LaunchTrip("116","19-04-2025",1300,13,"8:30AM","Vola","Dhaka");
 //
-
-//        PutObjectInBinFileOrTxtFile.writeObjInBinaryFile("LaunchInfo.bin", t11);
-
+//
+//        PutObjectInBinFileOrTxtFile.writeObjInBinaryFile("LaunchInfo.bin", t1);
+//
 //        PutObjectInBinFileOrTxtFile.writeObjInBinaryFile("newbinfile",t2);
 //        PutObjectInBinFileOrTxtFile.writeObjInBinaryFile("newbinfile",t3);
 //        PutObjectInBinFileOrTxtFile.writeObjInBinaryFile("newbinfile",t4);
@@ -51,8 +51,8 @@ public class HelloApplication extends Application {
 
 
 
-
 //
+////
 //        File f = new File("LaunchInfo.bin");
 //        try{
 //            FileOutputStream fos = null;
@@ -66,7 +66,7 @@ public class HelloApplication extends Application {
 //                oos = new ObjectOutputStream(fos);
 //            }
 //
-//            oos.writeObject(t1);oos.writeObject(t2);oos.writeObject(t3);oos.writeObject(t4);oos.writeObject(t5);oos.writeObject(t6);
+//            oos.writeObject(t1); oos.writeObject(t2);oos.writeObject(t3);oos.writeObject(t4);oos.writeObject(t5);oos.writeObject(t6);
 //            oos.close();
 //        }
 //        catch (IOException e){

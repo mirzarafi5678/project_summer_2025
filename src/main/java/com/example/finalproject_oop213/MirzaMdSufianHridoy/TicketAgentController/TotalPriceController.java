@@ -1,8 +1,6 @@
 package com.example.finalproject_oop213.MirzaMdSufianHridoy.TicketAgentController;
 
-import com.example.finalproject_oop213.MirzaMdSufianHridoy.CreatePassengerTicket;
-import com.example.finalproject_oop213.MirzaMdSufianHridoy.LaunchTrip;
-import com.example.finalproject_oop213.MirzaMdSufianHridoy.SceneSwitcher;
+import com.example.finalproject_oop213.MirzaMdSufianHridoy.CreateTicket;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 
@@ -29,7 +27,7 @@ public class TotalPriceController {
             try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f2))) {
                 while (true) {
                     try {
-                     CreatePassengerTicket cp =(CreatePassengerTicket)ois.readObject();
+                     CreateTicket cp =(CreateTicket)ois.readObject();
                      count++;
                      if (cp.gender.equals("Male")){
                          Malecount+=1;
@@ -66,7 +64,7 @@ public class TotalPriceController {
                 ObjectInputStream ois = new ObjectInputStream(fis);
                 while(true){
                     int perPrice=0;
-                    CreatePassengerTicket cp= (CreatePassengerTicket) ois.readObject();
+                    CreateTicket cp= (CreateTicket) ois.readObject();
                     if (cp.seattype.equals("Sitting Seats")){
                         perPrice+= (cp.numberofseat* 200) + (cp.numberofseat*cp.obj.price) + (cp.cargosapce * 20);
                         tottalPrice+=perPrice;

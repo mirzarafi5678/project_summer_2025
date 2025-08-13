@@ -2,14 +2,14 @@ package com.example.finalproject_oop213.MirzaMdSufianHridoy;
 
 import java.io.Serializable;
 
-public class CreatePassengerTicket implements Serializable {
+public class CreateTicket implements Serializable {
     public String  nametf,tripnumber,gender,seattype;
     public  int setid,cargosapce,numberofseat,contactnumber;
     public LaunchTrip obj=null;
     public int yourtotalprice=0;
 
-    public CreatePassengerTicket(String nametf, LaunchTrip obj, int contactnumber, int numberofseat, int cargosapce,
-                                 int setid, String seattype, String gender, String tripnumber) {
+    public CreateTicket(String nametf, LaunchTrip obj, int contactnumber, int numberofseat, int cargosapce,
+                        int setid, String seattype, String gender, String tripnumber) {
         this.nametf = nametf;
         this.obj = obj;
         this.contactnumber = contactnumber;
@@ -105,16 +105,36 @@ public class CreatePassengerTicket implements Serializable {
 //   "\n"
     @Override
     public String toString() {
-        return "CreatePassengerTicket{" +
-                "nametf='" + nametf + "\n" +
-                ", tripnumber='" + tripnumber + "\n" +
-                ", gender='" + gender + "\n"+
-                ", seattype='" + seattype + "\n" +
-                ", setid=" + setid +"\n"+
-                ", cargosapce=" + cargosapce +"\n"+
-                ", numberofseat=" + numberofseat +"\n"+
-                ", contactnumber=" + contactnumber +"\n"+
-                ", obj=" + obj +
-                '}';
+        String tripDetails = (obj != null)
+                ? String.format(
+                "Trip: %s | %s → %s | Start: %s | Hrs: %d | Price: %d | Date: %s",
+                obj.tripnumber, obj.from, obj.to, obj.starttime,
+                obj.estimatedhour, obj.price, obj.date
+        )
+                : "No trip assigned";
+
+        return String.format(
+                "Name: %s | Gender: %s | Seat: %s (%d) | Cargo: %d | Seats: %d | Contact: %d | Total: %d%n  %s%n",
+                nametf, gender, seattype, setid, cargosapce, numberofseat,
+                contactnumber, yourtotalprice, tripDetails
+        );
     }
+
+//    public String style1() {
+//        String tripDetails = (obj != null)
+//                ? String.format(
+//                "Trip: %s | %s → %s | Start: %s | Hrs: %d | Price: %d | Date: %s",
+//                obj.tripnumber, obj.from, obj.to, obj.starttime,
+//                obj.estimatedhour, obj.price, obj.date
+//        )
+//                : "No trip assigned";
+//
+//        return String.format(
+//                "Name: %s | Gender: %s | Seat: %s (%d) | Cargo: %d | Seats: %d | Contact: %d | Total: %d%n  %s%n",
+//                nametf, gender, seattype, setid, cargosapce, numberofseat,
+//                contactnumber, yourtotalprice, tripDetails
+//        );
+//    }
+
+
 }

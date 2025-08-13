@@ -1,6 +1,6 @@
 package com.example.finalproject_oop213.MirzaMdSufianHridoy.TicketAgentController;
 
-import com.example.finalproject_oop213.MirzaMdSufianHridoy.CreatePassengerTicket;
+import com.example.finalproject_oop213.MirzaMdSufianHridoy.CreateTicket;
 import com.example.finalproject_oop213.MirzaMdSufianHridoy.PutObjectInBinFileOrTxtFile;
 import com.example.finalproject_oop213.MirzaMdSufianHridoy.SceneSwitcher;
 import javafx.event.ActionEvent;
@@ -14,40 +14,40 @@ import java.io.ObjectInputStream;
 
 public class RemovePassengerTicketPgaeController {
     @javafx.fxml.FXML
-    private TableColumn<CreatePassengerTicket,String> passengernamecolumn;
+    private TableColumn<CreateTicket,String> passengernamecolumn;
     @javafx.fxml.FXML
     private TextField PutIdTF;
     @javafx.fxml.FXML
-    private TableColumn <CreatePassengerTicket,String>tripnumbercolumn;
+    private TableColumn <CreateTicket,String>tripnumbercolumn;
     @javafx.fxml.FXML
-    private TableColumn<CreatePassengerTicket,String> cargospacecolumn;
+    private TableColumn<CreateTicket,String> cargospacecolumn;
     @javafx.fxml.FXML
     private Label StatusShow;
     @javafx.fxml.FXML
-    private TableColumn <CreatePassengerTicket,String>numberofseatcolumn;
+    private TableColumn <CreateTicket,String>numberofseatcolumn;
     @javafx.fxml.FXML
-    private TableColumn <CreatePassengerTicket,String>totalpricecolumn1;
+    private TableColumn <CreateTicket,String>totalpricecolumn1;
     @javafx.fxml.FXML
-    private TableView <CreatePassengerTicket>tableview;
+    private TableView <CreateTicket>tableview;
     @javafx.fxml.FXML
-    private TableColumn<CreatePassengerTicket,String> seattypecolumn;
+    private TableColumn<CreateTicket,String> seattypecolumn;
     @javafx.fxml.FXML
-    private TableColumn <CreatePassengerTicket,String>contactnumbercolumn;
+    private TableColumn <CreateTicket,String>contactnumbercolumn;
 
     Alert aa= new Alert(Alert.AlertType.ERROR);
     @javafx.fxml.FXML
-    private TableColumn<CreatePassengerTicket,String> IdColumn;
+    private TableColumn<CreateTicket,String> IdColumn;
 
     @javafx.fxml.FXML
     void initialize(){
-        passengernamecolumn.setCellValueFactory(new PropertyValueFactory<CreatePassengerTicket,String>("nametf"));
-        contactnumbercolumn.setCellValueFactory(new PropertyValueFactory<CreatePassengerTicket,String>("contactnumber"));
-        totalpricecolumn1.setCellValueFactory(new PropertyValueFactory<CreatePassengerTicket,String>("yourtotalprice"));
-        numberofseatcolumn.setCellValueFactory(new PropertyValueFactory<CreatePassengerTicket,String>("numberofseat"));
-        seattypecolumn.setCellValueFactory(new PropertyValueFactory<CreatePassengerTicket,String>("seattype"));
-        cargospacecolumn.setCellValueFactory(new PropertyValueFactory<CreatePassengerTicket,String>("cargosapce"));
-        tripnumbercolumn.setCellValueFactory(new PropertyValueFactory<CreatePassengerTicket,String>("tripnumber"));
-        IdColumn.setCellValueFactory(new PropertyValueFactory<CreatePassengerTicket,String>("setid"));
+        passengernamecolumn.setCellValueFactory(new PropertyValueFactory<CreateTicket,String>("nametf"));
+        contactnumbercolumn.setCellValueFactory(new PropertyValueFactory<CreateTicket,String>("contactnumber"));
+        totalpricecolumn1.setCellValueFactory(new PropertyValueFactory<CreateTicket,String>("yourtotalprice"));
+        numberofseatcolumn.setCellValueFactory(new PropertyValueFactory<CreateTicket,String>("numberofseat"));
+        seattypecolumn.setCellValueFactory(new PropertyValueFactory<CreateTicket,String>("seattype"));
+        cargospacecolumn.setCellValueFactory(new PropertyValueFactory<CreateTicket,String>("cargosapce"));
+        tripnumbercolumn.setCellValueFactory(new PropertyValueFactory<CreateTicket,String>("tripnumber"));
+        IdColumn.setCellValueFactory(new PropertyValueFactory<CreateTicket,String>("setid"));
     }
 
 
@@ -66,7 +66,7 @@ public class RemovePassengerTicketPgaeController {
             FileInputStream fis = new FileInputStream(f);
             ObjectInputStream ois = new ObjectInputStream(fis);
             while(true){
-                tableview.getItems().add((CreatePassengerTicket)ois.readObject());
+                tableview.getItems().add((CreateTicket)ois.readObject());
             }
         }
         catch(Exception e){
@@ -88,7 +88,7 @@ public class RemovePassengerTicketPgaeController {
 
 
         boolean remove=PutObjectInBinFileOrTxtFile.removeParticularObjectFromBinFile("CreatedByCounter.bin",
-                obj -> obj instanceof CreatePassengerTicket && ((CreatePassengerTicket) obj).getSetid() == Integer.parseInt(PutIdTF.getText()));
+                obj -> obj instanceof CreateTicket && ((CreateTicket) obj).getSetid() == Integer.parseInt(PutIdTF.getText()));
 
 
         if (remove){

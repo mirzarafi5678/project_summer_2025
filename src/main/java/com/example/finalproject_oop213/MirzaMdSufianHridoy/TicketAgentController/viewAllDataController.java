@@ -1,7 +1,6 @@
 package com.example.finalproject_oop213.MirzaMdSufianHridoy.TicketAgentController;
 
-import com.example.finalproject_oop213.MirzaMdSufianHridoy.CreatePassengerTicket;
-import com.example.finalproject_oop213.MirzaMdSufianHridoy.LaunchTrip;
+import com.example.finalproject_oop213.MirzaMdSufianHridoy.CreateTicket;
 import com.example.finalproject_oop213.MirzaMdSufianHridoy.SceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
@@ -17,28 +16,28 @@ public class viewAllDataController {
     @javafx.fxml.FXML
     private TextField spacenumberTF;
     @javafx.fxml.FXML
-    private TableColumn <CreatePassengerTicket,String>passengernamecolumn;
+    private TableColumn <CreateTicket,String>passengernamecolumn;
     @javafx.fxml.FXML
-    private TableColumn <CreatePassengerTicket,String>tripnumbercolumn;
+    private TableColumn <CreateTicket,String>tripnumbercolumn;
     @javafx.fxml.FXML
-    private TableColumn <CreatePassengerTicket,String>cargospacecolumn;
+    private TableColumn <CreateTicket,String>cargospacecolumn;
     @javafx.fxml.FXML
     private Label showtotalbook;
     @javafx.fxml.FXML
-    private TableColumn<CreatePassengerTicket,String> numberofseatcolumn;
+    private TableColumn<CreateTicket,String> numberofseatcolumn;
     @javafx.fxml.FXML
-    private TableView <CreatePassengerTicket>tableview;
+    private TableView <CreateTicket>tableview;
     @javafx.fxml.FXML
     private Label nameshow;
     @javafx.fxml.FXML
-    private TableColumn <CreatePassengerTicket,String>contactnumbercolumn;
+    private TableColumn <CreateTicket,String>contactnumbercolumn;
     @javafx.fxml.FXML
-    private TableColumn<CreatePassengerTicket,String> totalpricecolumn1;
+    private TableColumn<CreateTicket,String> totalpricecolumn1;
     @javafx.fxml.FXML
-    private TableColumn<CreatePassengerTicket,String> seattypecolumn;
+    private TableColumn<CreateTicket,String> seattypecolumn;
     Alert aa= new Alert(Alert.AlertType.ERROR);
     @javafx.fxml.FXML
-    private TableColumn <CreatePassengerTicket,String>GenderColumn;
+    private TableColumn <CreateTicket,String>GenderColumn;
 
     @javafx.fxml.FXML
 
@@ -49,14 +48,14 @@ public class viewAllDataController {
 
 
     void initialize(){
-        passengernamecolumn.setCellValueFactory(new PropertyValueFactory<CreatePassengerTicket,String>("nametf"));
-        contactnumbercolumn.setCellValueFactory(new PropertyValueFactory<CreatePassengerTicket,String>("contactnumber"));
-        totalpricecolumn1.setCellValueFactory(new PropertyValueFactory<CreatePassengerTicket,String>("yourtotalprice"));
-        numberofseatcolumn.setCellValueFactory(new PropertyValueFactory<CreatePassengerTicket,String>("numberofseat"));
-        seattypecolumn.setCellValueFactory(new PropertyValueFactory<CreatePassengerTicket,String>("seattype"));
-        cargospacecolumn.setCellValueFactory(new PropertyValueFactory<CreatePassengerTicket,String>("cargosapce"));
-        tripnumbercolumn.setCellValueFactory(new PropertyValueFactory<CreatePassengerTicket,String>("tripnumber"));
-        GenderColumn.setCellValueFactory(new PropertyValueFactory<CreatePassengerTicket,String>("gender"));
+        passengernamecolumn.setCellValueFactory(new PropertyValueFactory<CreateTicket,String>("nametf"));
+        contactnumbercolumn.setCellValueFactory(new PropertyValueFactory<CreateTicket,String>("contactnumber"));
+        totalpricecolumn1.setCellValueFactory(new PropertyValueFactory<CreateTicket,String>("yourtotalprice"));
+        numberofseatcolumn.setCellValueFactory(new PropertyValueFactory<CreateTicket,String>("numberofseat"));
+        seattypecolumn.setCellValueFactory(new PropertyValueFactory<CreateTicket,String>("seattype"));
+        cargospacecolumn.setCellValueFactory(new PropertyValueFactory<CreateTicket,String>("cargosapce"));
+        tripnumbercolumn.setCellValueFactory(new PropertyValueFactory<CreateTicket,String>("tripnumber"));
+        GenderColumn.setCellValueFactory(new PropertyValueFactory<CreateTicket,String>("gender"));
 
 
 
@@ -72,7 +71,7 @@ public class viewAllDataController {
             FileInputStream fis = new FileInputStream(f);
             ObjectInputStream ois = new ObjectInputStream(fis);
             while(true){
-                CreatePassengerTicket cp=(CreatePassengerTicket)ois.readObject();
+                CreateTicket cp=(CreateTicket)ois.readObject();
                 totalbooking+=cp.numberofseat;
             }
         }
@@ -91,6 +90,14 @@ public class viewAllDataController {
 
     @javafx.fxml.FXML
     public void filterbutton(ActionEvent actionEvent) {
+        if (spacenumberTF.getText().isEmpty()){
+            Alert aa=new Alert(Alert.AlertType.ERROR);
+            aa.setContentText("put value");
+            aa.show();
+            return;
+
+        }
+
         tableview.getItems().clear();
         System.out.println("button working");
         File f = new File("CreatedByCounter.bin");
@@ -98,7 +105,7 @@ public class viewAllDataController {
             FileInputStream fis = new FileInputStream(f);
             ObjectInputStream ois = new ObjectInputStream(fis);
             while(true){
-                CreatePassengerTicket cp=(CreatePassengerTicket)ois.readObject();
+                CreateTicket cp=(CreateTicket)ois.readObject();
                 if (cp.cargosapce <= Integer.parseInt(spacenumberTF.getText())){
                     tableview.getItems().add(cp);
                 }
@@ -122,7 +129,7 @@ public class viewAllDataController {
             FileInputStream fis = new FileInputStream(f);
             ObjectInputStream ois = new ObjectInputStream(fis);
             while(true){
-                tableview.getItems().add((CreatePassengerTicket)ois.readObject());
+                tableview.getItems().add((CreateTicket)ois.readObject());
             }
         }
         catch(Exception e){
@@ -144,7 +151,7 @@ public class viewAllDataController {
             FileInputStream fis = new FileInputStream(f);
             ObjectInputStream ois = new ObjectInputStream(fis);
             while(true){
-                CreatePassengerTicket cp=(CreatePassengerTicket)ois.readObject();
+                CreateTicket cp=(CreateTicket)ois.readObject();
                 if (cp.yourtotalprice >= max){
                     max=cp.yourtotalprice;
                     str=cp.nametf;

@@ -9,8 +9,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="653.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="com.example.finalproject_oop213.MirzaMdSufianHridoy.PassengerController.savepaymentcontroller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="653.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject_oop213.MirzaMdSufianHridoy.PassengerController.savepaymentcontroller">
    <children>
       <TableView fx:id="Tableview" layoutX="2.0" layoutY="220.0" prefHeight="302.0" prefWidth="812.0">
         <columns>
@@ -35,5 +34,6 @@
       <Label fx:id="StatusShow" layoutX="531.0" layoutY="133.0" prefHeight="73.0" prefWidth="204.0" style="-fx-border-color: black;" />
       <Label layoutX="446.0" layoutY="173.0" text="Status" />
       <Button layoutX="64.0" layoutY="560.0" mnemonicParsing="false" onAction="#DashboardButton" text="Dashboard" />
+      <Button layoutX="262.0" layoutY="178.0" mnemonicParsing="false" onAction="#loadDatabutton" text="Load your data" />
    </children>
 </AnchorPane>

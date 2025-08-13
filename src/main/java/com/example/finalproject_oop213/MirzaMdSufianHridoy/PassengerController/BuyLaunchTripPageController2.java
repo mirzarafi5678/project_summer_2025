@@ -42,6 +42,8 @@ public class BuyLaunchTripPageController2 {
     private TableColumn <LaunchTrip,String>TripNumberColumn;
     @javafx.fxml.FXML
     private TableColumn <LaunchTrip,String>EstimatedHourColumn;
+    @javafx.fxml.FXML
+    private TableColumn <LaunchTrip,String>pricecolumn;
 
     @javafx.fxml.FXML
     void initialize(){
@@ -56,6 +58,8 @@ public class BuyLaunchTripPageController2 {
         StartTimeColumn.setCellValueFactory(new PropertyValueFactory<LaunchTrip,String>("starttime"));
         DateColumn.setCellValueFactory(new PropertyValueFactory<LaunchTrip,String>("date"));
         EstimatedHourColumn.setCellValueFactory(new PropertyValueFactory<LaunchTrip,String>("estimatedhour"));
+        pricecolumn.setCellValueFactory(new PropertyValueFactory<LaunchTrip,String>("price"));
+
 
     }
 
@@ -71,11 +75,11 @@ public class BuyLaunchTripPageController2 {
                     TableviewShow.getItems().add(trip);
 
                 } catch (EOFException e) {
-                    break; // End of file
+                    break;
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace(); // Print exceptions for debugging
+            e.printStackTrace();
         }
 
     }
@@ -91,8 +95,30 @@ public class BuyLaunchTripPageController2 {
     }
 
 
+    Alert aa= new Alert(Alert.AlertType.ERROR);
+
     @javafx.fxml.FXML
     public void ConfirmTicketButton(ActionEvent actionEvent) {
+
+      if (FullnameTF.getText().isEmpty() || BkashNoTF.getText().isEmpty()||PhoneNoTF.getText().isEmpty()||
+      NumberOfTicketTF.getText().isEmpty()|| GenderComboBox.getValue()==null || TypeOfSeatComboBox.getValue()==null||
+      NeedBaseAmountTF.getText().isEmpty()|| TripNumberTF.getText().isEmpty()){
+              Alert aa= new Alert(Alert.AlertType.ERROR);
+              aa.setContentText("Fillup Properly");
+              aa.show();
+              return;
+
+      }
+
+
+        if (   sessionmanager.latestuser.pass!=null  && sessionmanager.latestuser.pass.obj !=null){
+            aa.setContentText("You Already Bought the ticket");
+            aa.show();
+            return;
+        }
+
+
+
 
         System.out.println("button worked");
 
@@ -136,8 +162,12 @@ public class BuyLaunchTripPageController2 {
                     BkashNoTF.getText()
 
             );
-            PutObjectInBinFileOrTxtFile.overwriteTxtFile("passengerdata.txt",datas);
-            addInList.addPassengerData(datas);
+
+            sessionmanager.latestuser.pass=datas;
+            PutObjectInBinFileOrTxtFile.updateUser(sessionmanager.latestuser);
+            PutObjectInBinFileOrTxtFile.overwriteTxtFile("passengerdata.txt",sessionmanager.latestuser.pass.style2());
+
+//            addInList.addPassengerData(datas);
             StatusShow.setWrapText(true);
             StatusShow.setText("Successfully selected your trip . now go to payment options");
 
