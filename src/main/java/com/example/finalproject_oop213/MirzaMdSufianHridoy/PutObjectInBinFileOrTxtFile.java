@@ -115,56 +115,6 @@ public class PutObjectInBinFileOrTxtFile {
             e.printStackTrace();
         }
     }
-
-
-
-    public static List<Object> readObjectsAsListFromBinaryFile(String filePath) {
-        List<Object> objectList = new ArrayList<>();
-        File file = new File(filePath);
-
-        if (!file.exists()) return objectList;
-
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
-            while (true) {
-                try {
-                    Object obj = ois.readObject();
-                    objectList.add(obj);
-                } catch (EOFException eof) {
-                    break;
-                }
-            }
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        return objectList;
-    }
-
-
-    public static void overwriteBinaryFileWithList(String filePath, List<Object> objectList) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filePath, false))) {
-            for (Object obj : objectList) {
-                oos.writeObject(obj);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static boolean removeParticularObjectFromBinFile(String filePath, ObjectMatcher matcher) {
-        List<Object> objects = readObjectsAsListFromBinaryFile(filePath);
-        boolean removed = objects.removeIf(matcher::matches);
-
-        if (!removed) {
-            System.out.println("No matching object found to remove.");
-            return false;
-        }
-
-        overwriteBinaryFileWithList(filePath, objects);
-        System.out.println("Matching object removed successfully.");
-        return true;
-    }
-
     public static Object getLastObjectFromBinaryFile(String filePath) {
         File file = new File(filePath);
 
@@ -227,6 +177,93 @@ public class PutObjectInBinFileOrTxtFile {
             e.printStackTrace();
         }
     }
+    public static boolean removeATicketFromBin(int setid) {
+        ArrayList<CreateTicket> cc1 = new ArrayList<>();
+        File f = new File("CreatedByCounter.bin");
+        boolean removed = false;
+
+        if (f.exists()) {
+            try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f))) {
+                while (true) {
+                    try {
+                        CreateTicket obj = (CreateTicket) ois.readObject();
+                        cc1.add(obj);
+                    } catch (EOFException e) {
+                        break;
+                    }
+                }
+            } catch (IOException | ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+        for (int i = 0; i < cc1.size(); i++) {
+            if (cc1.get(i).getSetid() == setid) {
+                cc1.remove(i);
+                removed = true;
+                break;
+            }
+        }
+
+
+        if (removed) {
+            try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(f))) {
+                for (CreateTicket ticket : cc1) {
+                    oos.writeObject(ticket);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return removed;
+    }
+
+    public static boolean removeALaunchTripFromBin(String tripNumber) {
+        ArrayList<LaunchTrip> trips = new ArrayList<>();
+        File f = new File("LaunchInfo.bin");
+        boolean removed = false;
+
+        if (f.exists()) {
+            try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f))) {
+                while (true) {
+                    try {
+                        LaunchTrip obj = (LaunchTrip) ois.readObject();
+                        trips.add(obj);
+                    } catch (EOFException e) {
+                        break;
+                    }
+                }
+            } catch (IOException | ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+        for (int i = 0; i < trips.size(); i++) {
+            if (trips.get(i).getTripnumber().equals(tripNumber)) {
+                trips.remove(i);
+                removed = true;
+                break;
+            }
+        }
+
+
+        if (removed) {
+            try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(f))) {
+                for (LaunchTrip trip : trips) {
+                    oos.writeObject(trip);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return removed;
+    }
+
+
 
 
 }
