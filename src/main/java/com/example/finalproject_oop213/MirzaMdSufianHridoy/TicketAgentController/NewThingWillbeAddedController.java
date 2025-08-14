@@ -79,8 +79,7 @@ public class NewThingWillbeAddedController {
         }
 
 
-        boolean remove= PutObjectInBinFileOrTxtFile.removeParticularObjectFromBinFile("LaunchInfo.bin",
-                obj -> obj instanceof LaunchTrip && ((LaunchTrip) obj).getTripnumber().equals(RemoveTripTF.getText()));
+        boolean remove=PutObjectInBinFileOrTxtFile.removeALaunchTripFromBin(RemoveTripTF.getText());
 
         if (remove) {
             StatusShow.setWrapText(true);

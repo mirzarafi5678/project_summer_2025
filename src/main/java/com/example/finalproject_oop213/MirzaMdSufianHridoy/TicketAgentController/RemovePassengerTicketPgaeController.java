@@ -87,8 +87,7 @@ public class RemovePassengerTicketPgaeController {
         }
 
 
-        boolean remove=PutObjectInBinFileOrTxtFile.removeParticularObjectFromBinFile("CreatedByCounter.bin",
-                obj -> obj instanceof CreateTicket && ((CreateTicket) obj).getSetid() == Integer.parseInt(PutIdTF.getText()));
+        boolean remove=PutObjectInBinFileOrTxtFile.removeATicketFromBin(Integer.parseInt(PutIdTF.getText()));
 
 
         if (remove){
