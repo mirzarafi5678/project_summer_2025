@@ -19,5 +19,6 @@
       <Label layoutX="455.0" layoutY="535.0" text="Status" />
       <Button layoutX="69.0" layoutY="540.0" mnemonicParsing="false" onAction="#DashboardButton" text="Back to dashboard" />
       <Button layoutX="654.0" layoutY="43.0" mnemonicParsing="false" onAction="#seePriceButton" text="See Price" />
+      <Button layoutX="560.0" layoutY="334.0" mnemonicParsing="false" onAction="#printButton" text="Print price details" />
    </children>
 </AnchorPane>

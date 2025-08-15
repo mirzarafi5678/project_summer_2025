@@ -58,7 +58,6 @@ public class cancelTripLaunchController {
               SHowStatus.setText("Buy ticket first");
               return;
 
-
           }
 
 
@@ -80,4 +79,5 @@ public class cancelTripLaunchController {
 
 
     }
+
 }
