@@ -2,16 +2,16 @@
 ===========================
       PASSENGER TICKET
 ===========================
-Full Name       : mirzasa
-bKash Number    : 12
-Phone No        : 21
-Gender          : Female
-Type of Seat    : Sitting Seats
-Cargo Space     : 11
+Full Name       : Rfai
+bKash Number    : 0112
+Phone No        : 0111
+Gender          : Male
+Type of Seat    : Chair Seats
+Cargo Space     : 22
 No. of Tickets  : 11
-Bought Ticket   : false
-Cancelled Ticket: true
-Gave Feedback   : true
+Bought Ticket   : true
+Cancelled Ticket: false
+Gave Feedback   : false
 Total Price     : 0
 ---------------------------
    LAUNCH TRIP DETAILS

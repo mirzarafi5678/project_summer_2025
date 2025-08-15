@@ -263,7 +263,30 @@ public class PutObjectInBinFileOrTxtFile {
         return removed;
     }
 
+    public static void writeStringToTxtFile1(String filename, String content) {
+        File file = new File(filename);
+
+        try {
+            // Create file if it doesn't exist
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+
+            // Write to file (overwrite mode)
+            try (FileWriter writer = new FileWriter(file, false)) { // 'false' -> overwrite
+                writer.write(content);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 
 }
+
+
+
+
+
